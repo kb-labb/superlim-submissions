@@ -1,0 +1,63 @@
+{
+	"repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
+	"model": {
+		"model_name": "Random",
+		"model_type": "Non-transformer",
+		"number_params": null,
+		"data_size": null
+	},
+	"tasks": {
+		"DaLAJ": {
+			"dev": 0.023389215059597124,
+			"test": 0.01688780050518157
+		},
+		"Swedish FAQ": {
+			"dev": -0.09595056937139379,
+			"test": -0.13895962168061105
+		},
+		"SweMNLI": {
+			"dev": 0.002678749779494116,
+			"test": -0.09063262909806635
+		},
+		"SweWinograd": {
+			"dev": -0.004172156346069489,
+			"test": 0.016523463317911435
+		},
+		"SweWinogender": {
+			"dev": null,
+			"test": {
+				"alpha": null,
+				"parity": null
+			}
+		},
+		"SweDiagnostics": {
+			"dev": null,
+			"test": null
+		},
+		"SweParaphrase": {
+			"dev": -0.05065576021617879,
+			"test": -0.006595516826491954
+		},
+		"SweWiC": {
+			"dev": 0.056808180377974415,
+			"test": -0.009544467678916257
+		},
+		"SweSAT": {
+			"dev": null,
+			"test": null
+		},
+		"Swedish Analogy": {
+			"dev": null,
+			"test": null
+		},
+		"SuperSim": {
+			"dev": null,
+			"test": null
+		},
+		"ABSA": {
+			"dev": -0.05666557742223621,
+			"test": 0.007832167020926262
+		}
+	},
+	"model_card": "This model predicts a random output in the possible range observed in the training set."
+}

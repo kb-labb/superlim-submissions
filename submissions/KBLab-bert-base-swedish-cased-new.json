@@ -1,0 +1,63 @@
+{
+	"repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
+	"model": {
+		"model_name": "KBLab/bert-base-swedish-cased-new",
+		"model_type": "Encoder",
+		"number_params": 135193344,
+		"data_size": "70GB"
+	},
+	"tasks": {
+		"DaLAJ": {
+			"dev": 0.7250115369609645,
+			"test": 0.7535520327586958
+		},
+		"Swedish FAQ": {
+			"dev": 0.6109778843591793,
+			"test": 0.45771788120844303
+		},
+		"SweMNLI": {
+			"dev": 0.7279228418788488,
+			"test": 0.1629204398447608
+		},
+		"SweWinograd": {
+			"dev": 0.06510658016682103,
+			"test": 0.04204330460374184
+		},
+		"SweWinogender": {
+			"dev": null,
+			"test": {
+				"alpha": -0.32836885847226815,
+				"parity": 1.0
+			}
+		},
+		"SweDiagnostics": {
+			"dev": null,
+			"test": null
+		},
+		"SweParaphrase": {
+			"dev": 0.8128420429680494,
+			"test": 0.7547803669888884
+		},
+		"SweWiC": {
+			"dev": 0.22523235842276446,
+			"test": 0.14034679128680505
+		},
+		"SweSAT": {
+			"dev": null,
+			"test": null
+		},
+		"Swedish Analogy": {
+			"dev": null,
+			"test": null
+		},
+		"SuperSim": {
+			"dev": null,
+			"test": null
+		},
+		"ABSA": {
+			"dev": 0.4777483100112616,
+			"test": 0.42898949598597313
+		}
+	},
+	"model_card": "---\nlanguage:\n- sv\n\n---\n\n# 🤗 BERT Swedish\n\nThis BERT model was trained using the 🤗 transformers library.\nThe size of the model is a regular BERT-base with 110M parameters.\nThe model was trained on about 70GB of data, consisting mostly of OSCAR and Swedish newspaper text curated by the National Library of Sweden.\nTo avoid excessive padding documents shorter than 512 tokens were concatenated into one large sequence of 512 tokens, and larger documents were split into multiple 512 token sequences, following https://github.com/huggingface/transformers/blob/master/examples/pytorch/language-modeling/run_mlm.py\n\nTraining was done for a bit more than 8 epochs with a batch size of 2048, resulting in a little less than 125k training steps.\n\nThe model has three sister models trained on the same dataset:\n- [Megatron-BERT-base-125k](https://huggingface.co/KBLab/megatron-bert-base-swedish-cased-125k)\n- [Megatron-BERT-base-600k](https://huggingface.co/KBLab/megatron-bert-base-swedish-cased-600k)\n- [Megatron-BERT-large-110k](https://huggingface.co/KBLab/megatron-bert-large-swedish-cased-110k)\n\n## Acknowledgements\n\nWe gratefully acknowledge the HPC RIVR consortium (https://www.hpc-rivr.si) and EuroHPC JU (https://eurohpc-ju.europa.eu) for funding this research by providing computing resources of the HPC system Vega at the Institute of Information Science (https://www.izum.si)."
+}

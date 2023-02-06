@@ -1,0 +1,63 @@
+{
+	"repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
+	"model": {
+		"model_name": "xlm-roberta-base",
+		"model_type": "Encoder",
+		"number_params": 278043648,
+		"data_size": "2500GB"
+	},
+	"tasks": {
+		"DaLAJ": {
+			"dev": 0.6681863478186363,
+			"test": 0.689677037370273
+		},
+		"Swedish FAQ": {
+			"dev": 0.6199777530589544,
+			"test": 0.4557506270154067
+		},
+		"SweMNLI": {
+			"dev": 0.7204073776687495,
+			"test": 0.18562788018433185
+		},
+		"SweWinograd": {
+			"dev": -0.25116279069767433,
+			"test": -0.17721518987341778
+		},
+		"SweWinogender": {
+			"dev": null,
+			"test": {
+				"alpha": -0.29802359635176967,
+				"parity": 0.9951923076923077
+			}
+		},
+		"SweDiagnostics": {
+			"dev": null,
+			"test": null
+		},
+		"SweParaphrase": {
+			"dev": 0.871642292934476,
+			"test": 0.8127603143473852
+		},
+		"SweWiC": {
+			"dev": 0.25325403402720226,
+			"test": 0.18224840520964847
+		},
+		"SweSAT": {
+			"dev": null,
+			"test": null
+		},
+		"Swedish Analogy": {
+			"dev": null,
+			"test": null
+		},
+		"SuperSim": {
+			"dev": null,
+			"test": null
+		},
+		"ABSA": {
+			"dev": 0.4026492812800284,
+			"test": 0.36426680691091373
+		}
+	},
+	"model_card": "---\ntags:\n- exbert\nlanguage:\n- multilingual\n- af\n- am\n- ar\n- as\n- az\n- be\n- bg\n- bn\n- br\n- bs\n- ca\n- cs\n- cy\n- da\n- de\n- el\n- en\n- eo\n- es\n- et\n- eu\n- fa\n- fi\n- fr\n- fy\n- ga\n- gd\n- gl\n- gu\n- ha\n- he\n- hi\n- hr\n- hu\n- hy\n- id\n- is\n- it\n- ja\n- jv\n- ka\n- kk\n- km\n- kn\n- ko\n- ku\n- ky\n- la\n- lo\n- lt\n- lv\n- mg\n- mk\n- ml\n- mn\n- mr\n- ms\n- my\n- ne\n- nl\n- no\n- om\n- or\n- pa\n- pl\n- ps\n- pt\n- ro\n- ru\n- sa\n- sd\n- si\n- sk\n- sl\n- so\n- sq\n- sr\n- su\n- sv\n- sw\n- ta\n- te\n- th\n- tl\n- tr\n- ug\n- uk\n- ur\n- uz\n- vi\n- xh\n- yi\n- zh\nlicense: mit\n---\n\n# XLM-RoBERTa (base-sized model)\n\nXLM-RoBERTa model pre-trained on 2.5TB of filtered CommonCrawl data containing 100 languages. It was introduced in the paper [Unsupervised Cross-lingual Representation Learning at Scale](https://arxiv.org/abs/1911.02116) by Conneau et al. and first released in [this repository](https://github.com/pytorch/fairseq/tree/master/examples/xlmr).\n\nDisclaimer: The team releasing XLM-RoBERTa did not write a model card for this model so this model card has been written by the Hugging Face team.\n\n## Model description\n\nXLM-RoBERTa is a multilingual version of RoBERTa. It is pre-trained on 2.5TB of filtered CommonCrawl data containing 100 languages.\n\nRoBERTa is a transformers model pretrained on a large corpus in a self-supervised fashion. This means it was pretrained on the raw texts only, with no humans labelling them in any way (which is why it can use lots of publicly available data) with an automatic process to generate inputs and labels from those texts.\n\nMore precisely, it was pretrained with the Masked language modeling (MLM) objective. Taking a sentence, the model randomly masks 15% of the words in the input then run the entire masked sentence through the model and has to predict the masked words. This is different from traditional recurrent neural networks (RNNs) that usually see the words one after the other, or from autoregressive models like GPT which internally mask the future tokens. It allows the model to learn a bidirectional representation of the sentence.\n\nThis way, the model learns an inner representation of 100 languages that can then be used to extract features useful for downstream tasks: if you have a dataset of labeled sentences for instance, you can train a standard classifier using the features produced by the XLM-RoBERTa model as inputs.\n\n## Intended uses & limitations\n\nYou can use the raw model for masked language modeling, but it's mostly intended to be fine-tuned on a downstream task. See the [model hub](https://huggingface.co/models?search=xlm-roberta) to look for fine-tuned versions on a task that interests you.\n\nNote that this model is primarily aimed at being fine-tuned on tasks that use the whole sentence (potentially masked) to make decisions, such as sequence classification, token classification or question answering. For tasks such as text generation, you should look at models like GPT2.\n\n## Usage\n\nYou can use this model directly with a pipeline for masked language modeling:\n\n```python\n>>> from transformers import pipeline\n>>> unmasker = pipeline('fill-mask', model='xlm-roberta-base')\n>>> unmasker(\"Hello I'm a <mask> model.\")\n\n[{'score': 0.10563907772302628,\n  'sequence': \"Hello I'm a fashion model.\",\n  'token': 54543,\n  'token_str': 'fashion'},\n {'score': 0.08015287667512894,\n  'sequence': \"Hello I'm a new model.\",\n  'token': 3525,\n  'token_str': 'new'},\n {'score': 0.033413201570510864,\n  'sequence': \"Hello I'm a model model.\",\n  'token': 3299,\n  'token_str': 'model'},\n {'score': 0.030217764899134636,\n  'sequence': \"Hello I'm a French model.\",\n  'token': 92265,\n  'token_str': 'French'},\n {'score': 0.026436051353812218,\n  'sequence': \"Hello I'm a sexy model.\",\n  'token': 17473,\n  'token_str': 'sexy'}]\n```\n\nHere is how to use this model to get the features of a given text in PyTorch:\n\n```python\nfrom transformers import AutoTokenizer, AutoModelForMaskedLM\n\ntokenizer = AutoTokenizer.from_pretrained('xlm-roberta-base')\nmodel = AutoModelForMaskedLM.from_pretrained(\"xlm-roberta-base\")\n\n# prepare input\ntext = \"Replace me by any text you'd like.\"\nencoded_input = tokenizer(text, return_tensors='pt')\n\n# forward pass\noutput = model(**encoded_input)\n```\n\n### BibTeX entry and citation info\n\n```bibtex\n@article{DBLP:journals/corr/abs-1911-02116,\n  author    = {Alexis Conneau and\n               Kartikay Khandelwal and\n               Naman Goyal and\n               Vishrav Chaudhary and\n               Guillaume Wenzek and\n               Francisco Guzm{\\'{a}}n and\n               Edouard Grave and\n               Myle Ott and\n               Luke Zettlemoyer and\n               Veselin Stoyanov},\n  title     = {Unsupervised Cross-lingual Representation Learning at Scale},\n  journal   = {CoRR},\n  volume    = {abs/1911.02116},\n  year      = {2019},\n  url       = {http://arxiv.org/abs/1911.02116},\n  eprinttype = {arXiv},\n  eprint    = {1911.02116},\n  timestamp = {Mon, 11 Nov 2019 18:38:09 +0100},\n  biburl    = {https://dblp.org/rec/journals/corr/abs-1911-02116.bib},\n  bibsource = {dblp computer science bibliography, https://dblp.org}\n}\n```\n\n<a href=\"https://huggingface.co/exbert/?model=xlm-roberta-base\">\n\t<img width=\"300px\" src=\"https://cdn-media.huggingface.co/exbert/button.png\">\n</a>"
+}

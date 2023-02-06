@@ -1,0 +1,60 @@
+{
+    "repo_link": null,
+    "model": {
+        "model_name": null,
+        "model_type": null,
+        "number_params": null,
+        "data_size": null
+    },
+    "tasks": {
+        "DaLAJ": {
+            "dev": null,
+            "test": null
+        },
+        "Swedish FAQ": {
+            "dev": null,
+            "test": null
+        },
+        "SweFraCas": {
+            "dev": null,
+            "test": null
+        },
+        "SweWinograd": {
+            "dev": null,
+            "test": null
+        },
+        "SweWinogender": {
+            "dev": null,
+            "test": null
+        },
+        "SweDiagnostics": {
+            "dev": null,
+            "test": null
+        },
+        "SweParaphrase": {
+            "dev": null,
+            "test": null
+        },
+        "SweWiC": {
+            "dev": null,
+            "test": null
+        },
+        "SweSAT": {
+            "dev": null,
+            "test": null
+        },
+        "Swedish Analogy": {
+            "dev": null,
+            "test": null
+        },
+        "SuperSim": {
+            "dev": null,
+            "test": null
+        },
+        "ABSA": {
+            "dev": null,
+            "test": null
+        }
+    },
+    "model_card": null
+}

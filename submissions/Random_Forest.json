@@ -1,0 +1,63 @@
+{
+	"repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
+	"model": {
+		"model_name": "Random Forest",
+		"model_type": "Non-transformer",
+		"number_params": null,
+		"data_size": null
+	},
+	"tasks": {
+		"DaLAJ": {
+			"dev": 0.3829062889994479,
+			"test": 0.3394968432110278
+		},
+		"Swedish FAQ": {
+			"dev": 0.008565975766721357,
+			"test": 0.012668391471139184
+		},
+		"SweMNLI": {
+			"dev": -0.25508611833044537,
+			"test": -0.411050630245114
+		},
+		"SweWinograd": {
+			"dev": -0.25116279069767433,
+			"test": -0.17721518987341778
+		},
+		"SweWinogender": {
+			"dev": null,
+			"test": {
+				"alpha": null,
+				"parity": null
+			}
+		},
+		"SweDiagnostics": {
+			"dev": null,
+			"test": null
+		},
+		"SweParaphrase": {
+			"dev": 0.1601687921042645,
+			"test": 0.14403670547168745
+		},
+		"SweWiC": {
+			"dev": 0.027256079724634286,
+			"test": 0.0033458678232035632
+		},
+		"SweSAT": {
+			"dev": null,
+			"test": null
+		},
+		"Swedish Analogy": {
+			"dev": null,
+			"test": null
+		},
+		"SuperSim": {
+			"dev": null,
+			"test": null
+		},
+		"ABSA": {
+			"dev": 0.012015124262396593,
+			"test": 0.005371421613140637
+		}
+	},
+	"model_card": "The model was trained on with the vectorizer performing best on the dev-set of the following:\nhttps://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html\nhttps://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html\nhttps://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html\nhttps://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html"
+}

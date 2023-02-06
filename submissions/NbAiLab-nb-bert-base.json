@@ -1,0 +1,63 @@
+{
+	"repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
+	"model": {
+		"model_name": "NbAiLab/nb-bert-base",
+		"model_type": "Encoder",
+		"number_params": 177853440,
+		"data_size": "109GB"
+	},
+	"tasks": {
+		"DaLAJ": {
+			"dev": 0.6530319741313557,
+			"test": 0.6622599102581453
+		},
+		"Swedish FAQ": {
+			"dev": 0.7073235923022094,
+			"test": 0.6802696789748628
+		},
+		"SweMNLI": {
+			"dev": 0.7174074679927003,
+			"test": 0.17158263524622241
+		},
+		"SweWinograd": {
+			"dev": 0.17708513708513707,
+			"test": 0.12036063941589692
+		},
+		"SweWinogender": {
+			"dev": null,
+			"test": {
+				"alpha": -0.3323056259348576,
+				"parity": 0.9903846153846154
+			}
+		},
+		"SweDiagnostics": {
+			"dev": null,
+			"test": null
+		},
+		"SweParaphrase": {
+			"dev": 0.8797653280972183,
+			"test": 0.8226824891263553
+		},
+		"SweWiC": {
+			"dev": 0.35161057692307696,
+			"test": 0.31754466293939976
+		},
+		"SweSAT": {
+			"dev": null,
+			"test": null
+		},
+		"Swedish Analogy": {
+			"dev": null,
+			"test": null
+		},
+		"SuperSim": {
+			"dev": null,
+			"test": null
+		},
+		"ABSA": {
+			"dev": 0.4563623368183589,
+			"test": 0.39288483040537536
+		}
+	},
+	"model_card": "---\nlanguage: no\nlicense: cc-by-4.0\ntags:\n- norwegian\n- bert\npipeline_tag: fill-mask\nwidget:\n- text: På biblioteket kan du [MASK] en bok.\n- text: Dette er et [MASK] eksempel.\n- text: Av og til kan en språkmodell gi et [MASK] resultat.\n- text: Som ansat får du [MASK] for at bidrage til borgernes adgang til dansk kulturarv, til forskning og til samfundets demokratiske udvikling.\n---\n- **Release 1.1** (March 11, 2021)\n- **Release 1.0** (January 13, 2021)\n\n# NB-BERT-base\n\n## Description\n\nNB-BERT-base is a general BERT-base model built on the large digital collection at the National Library of Norway.\n\nThis model is based on the same structure as [BERT Cased multilingual model](https://github.com/google-research/bert/blob/master/multilingual.md), and is trained on a wide variety of Norwegian text (both bokmål and nynorsk) from the last 200 years.\n\n## Intended use & limitations\n\nThe 1.1 version of the model is general, and should be fine-tuned for any particular use. Some fine-tuning sets may be found on GitHub, see\n\n* https://github.com/NBAiLab/notram\n\n## Training data\n\nThe model is trained on a wide variety of text. The training set is described on\n\n* https://github.com/NBAiLab/notram\n\n## More information\n\nFor more information on the model, see\n\nhttps://github.com/NBAiLab/notram"
+}
