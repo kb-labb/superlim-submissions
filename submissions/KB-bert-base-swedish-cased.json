@@ -1,63 +1,134 @@
 {
-	"repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
-	"model": {
-		"model_name": "KB/bert-base-swedish-cased",
-		"model_type": "Encoder",
-		"number_params": 124690944,
-		"data_size": "20GB"
-	},
-	"tasks": {
-		"DaLAJ": {
-			"dev": 0.7182862011530897,
-			"test": 0.7394951482148231
-		},
-		"Swedish FAQ": {
-			"dev": 0.7373050779688125,
-			"test": 0.6221031480241125
-		},
-		"SweMNLI": {
-			"dev": 0.720911278605919,
-			"test": 0.17911563694569343
-		},
-		"SweWinograd": {
-			"dev": 0.18820301783264748,
-			"test": 0.1394580304031725
-		},
-		"SweWinogender": {
-			"dev": null,
-			"test": {
-				"alpha": -0.3322649572649572,
-				"parity": 1.0
-			}
-		},
-		"SweDiagnostics": {
-			"dev": null,
-			"test": null
-		},
-		"SweParaphrase": {
-			"dev": 0.9007226362902745,
-			"test": 0.8449023151677025
-		},
-		"SweWiC": {
-			"dev": 0.40850682498279756,
-			"test": 0.37618973318770477
-		},
-		"SweSAT": {
-			"dev": null,
-			"test": null
-		},
-		"Swedish Analogy": {
-			"dev": null,
-			"test": null
-		},
-		"SuperSim": {
-			"dev": null,
-			"test": null
-		},
-		"ABSA": {
-			"dev": 0.5218699239076758,
-			"test": 0.5217616627657833
-		}
-	},
-	"model_card": "---\nlanguage: sv\n---\n\n# Swedish BERT Models\n\nThe National Library of Sweden / KBLab releases three pretrained language models based on BERT and ALBERT. The models are trained on aproximately 15-20GB of text (200M sentences, 3000M tokens) from various sources (books, news, government publications, swedish wikipedia and internet forums) aiming to provide a representative BERT model for Swedish text. A more complete description will be published later on.\n\nThe following three models are currently available:\n\n- **bert-base-swedish-cased** (*v1*) - A BERT trained with the same hyperparameters as first published by Google.\n- **bert-base-swedish-cased-ner** (*experimental*) - a BERT fine-tuned for NER using SUC 3.0.\n- **albert-base-swedish-cased-alpha** (*alpha*) - A first attempt at an ALBERT for Swedish.\n\nAll models are cased and trained with whole word masking.\n\n## Files\n\n| **name**                        | **files** |\n|---------------------------------|-----------|\n| bert-base-swedish-cased         | [config](https://s3.amazonaws.com/models.huggingface.co/bert/KB/bert-base-swedish-cased/config.json), [vocab](https://s3.amazonaws.com/models.huggingface.co/bert/KB/bert-base-swedish-cased/vocab.txt), [pytorch_model.bin](https://s3.amazonaws.com/models.huggingface.co/bert/KB/bert-base-swedish-cased/pytorch_model.bin) |\n| bert-base-swedish-cased-ner     | [config](https://s3.amazonaws.com/models.huggingface.co/bert/KB/bert-base-swedish-cased-ner/config.json), [vocab](https://s3.amazonaws.com/models.huggingface.co/bert/KB/bert-base-swedish-cased-ner/vocab.txt) [pytorch_model.bin](https://s3.amazonaws.com/models.huggingface.co/bert/KB/bert-base-swedish-cased-ner/pytorch_model.bin) |\n| albert-base-swedish-cased-alpha | [config](https://s3.amazonaws.com/models.huggingface.co/bert/KB/albert-base-swedish-cased-alpha/config.json), [sentencepiece model](https://s3.amazonaws.com/models.huggingface.co/bert/KB/albert-base-swedish-cased-alpha/spiece.model), [pytorch_model.bin](https://s3.amazonaws.com/models.huggingface.co/bert/KB/albert-base-swedish-cased-alpha/pytorch_model.bin) |\n\nTensorFlow model weights will be released soon.\n\n## Usage requirements / installation instructions\n\nThe examples below require Huggingface Transformers 2.4.1 and Pytorch 1.3.1 or greater. For Transformers<2.4.0 the tokenizer must be instantiated manually and the `do_lower_case` flag parameter set to `False` and `keep_accents` to `True` (for ALBERT).\n\nTo create an environment where the examples can be run, run the following in an terminal on your OS of choice.\n\n```\n# git clone https://github.com/Kungbib/swedish-bert-models\n# cd swedish-bert-models\n# python3 -m venv venv\n# source venv/bin/activate\n# pip install --upgrade pip\n# pip install -r requirements.txt\n```\n\n### BERT Base Swedish\n\nA standard BERT base for Swedish trained on a variety of sources. Vocabulary size is ~50k. Using Huggingface Transformers the model can be loaded in Python as follows:\n\n```python\nfrom transformers import AutoModel,AutoTokenizer\n\ntok = AutoTokenizer.from_pretrained('KB/bert-base-swedish-cased')\nmodel = AutoModel.from_pretrained('KB/bert-base-swedish-cased')\n```\n\n\n### BERT base fine-tuned for Swedish NER\n\nThis model is fine-tuned on the SUC 3.0 dataset. Using the Huggingface pipeline the model can be easily instantiated. For Transformer<2.4.1 it seems the tokenizer must be loaded separately to disable lower-casing of input strings:\n\n```python\nfrom transformers import pipeline\n\nnlp = pipeline('ner', model='KB/bert-base-swedish-cased-ner', tokenizer='KB/bert-base-swedish-cased-ner')\n\nnlp('Idag släpper KB tre språkmodeller.')\n```\n\nRunning the Python code above should produce in something like the result below. Entity types used are `TME` for time, `PRS` for personal names, `LOC` for locations, `EVN` for events and `ORG` for organisations. These labels are subject to change.\n\n```python\n[ { 'word': 'Idag', 'score': 0.9998126029968262, 'entity': 'TME' },\n  { 'word': 'KB',   'score': 0.9814832210540771, 'entity': 'ORG' } ]\n```\n\nThe BERT tokenizer often splits words into multiple tokens, with the subparts starting with `##`, for example the string `Engelbert kör Volvo till Herrängens fotbollsklubb` gets tokenized as `Engel ##bert kör Volvo till Herr ##ängens fotbolls ##klubb`. To glue parts back together one can use something like this:\n\n```python\ntext = 'Engelbert tar Volvon till Tele2 Arena för att titta på Djurgården IF ' +\\\n       'som spelar fotboll i VM klockan två på kvällen.'\n\nl = []\nfor token in nlp(text):\n    if token['word'].startswith('##'):\n        l[-1]['word'] += token['word'][2:]\n    else:\n        l += [ token ]\n\nprint(l)\n```\n\nWhich should result in the following (though less cleanly formated):\n\n```python\n[ { 'word': 'Engelbert',     'score': 0.99..., 'entity': 'PRS'},\n  { 'word': 'Volvon',        'score': 0.99..., 'entity': 'OBJ'},\n  { 'word': 'Tele2',         'score': 0.99..., 'entity': 'LOC'},\n  { 'word': 'Arena',         'score': 0.99..., 'entity': 'LOC'},\n  { 'word': 'Djurgården',    'score': 0.99..., 'entity': 'ORG'},\n  { 'word': 'IF',            'score': 0.99..., 'entity': 'ORG'},\n  { 'word': 'VM',            'score': 0.99..., 'entity': 'EVN'},\n  { 'word': 'klockan',       'score': 0.99..., 'entity': 'TME'},\n  { 'word': 'två',           'score': 0.99..., 'entity': 'TME'},\n  { 'word': 'på',            'score': 0.99..., 'entity': 'TME'},\n  { 'word': 'kvällen',       'score': 0.54..., 'entity': 'TME'} ]\n```\n\n### ALBERT base\n\nThe easisest way to do this is, again, using Huggingface Transformers:\n\n```python\nfrom transformers import AutoModel,AutoTokenizer\n\ntok = AutoTokenizer.from_pretrained('KB/albert-base-swedish-cased-alpha'),\nmodel = AutoModel.from_pretrained('KB/albert-base-swedish-cased-alpha')\n```\n\n## Acknowledgements ❤️\n\n- Resources from Stockholms University, Umeå University and Swedish Language Bank at Gothenburg University were used when fine-tuning BERT for NER.\n- Model pretraining was made partly in-house at the KBLab and partly (for material without active copyright) with the support of Cloud TPUs from Google's TensorFlow Research Cloud (TFRC).\n- Models are hosted on S3 by Huggingface 🤗\n"
+    "repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
+    "model": {
+        "model_name": "KB/bert-base-swedish-cased",
+        "model_type": "Encoder",
+        "number_params": 124690944,
+        "data_size": 20
+    },
+    "tasks": {
+        "DaLAJ": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.7182862011530897
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.7394951482148231
+            }
+        },
+        "Swedish FAQ": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.7373050779688125
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.6221031480241125
+            }
+        },
+        "SweMNLI": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.720911278605919
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.17911563694569343
+            }
+        },
+        "SweWinograd": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.18820301783264748
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.1394580304031725
+            }
+        },
+        "SweWinogender": {
+            "dev": {
+                "f1": null,
+                "parity": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "parity": 1.0,
+                "alpha": -0.3322649572649572
+            }
+        },
+        "SweDiagnostics": {
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
+        },
+        "SweParaphrase": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.9007226362902745
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.8449023151677025
+            }
+        },
+        "SweWiC": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.40850682498279756
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.37618973318770477
+            }
+        },
+        "SweSAT": {
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
+        },
+        "Swedish Analogy": {
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
+        },
+        "SuperSim": {
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
+        },
+        "ABSA": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.5218699239076758
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.5217616627657833
+            }
+        }
+    },
+    "model_card": "---\nlanguage: sv\n---\n\n# Swedish BERT Models\n\nThe National Library of Sweden / KBLab releases three pretrained language models based on BERT and ALBERT. The models are trained on aproximately 15-20GB of text (200M sentences, 3000M tokens) from various sources (books, news, government publications, swedish wikipedia and internet forums) aiming to provide a representative BERT model for Swedish text. A more complete description will be published later on.\n\nThe following three models are currently available:\n\n- **bert-base-swedish-cased** (*v1*) - A BERT trained with the same hyperparameters as first published by Google.\n- **bert-base-swedish-cased-ner** (*experimental*) - a BERT fine-tuned for NER using SUC 3.0.\n- **albert-base-swedish-cased-alpha** (*alpha*) - A first attempt at an ALBERT for Swedish.\n\nAll models are cased and trained with whole word masking.\n\n## Files\n\n| **name**                        | **files** |\n|---------------------------------|-----------|\n| bert-base-swedish-cased         | [config](https://s3.amazonaws.com/models.huggingface.co/bert/KB/bert-base-swedish-cased/config.json), [vocab](https://s3.amazonaws.com/models.huggingface.co/bert/KB/bert-base-swedish-cased/vocab.txt), [pytorch_model.bin](https://s3.amazonaws.com/models.huggingface.co/bert/KB/bert-base-swedish-cased/pytorch_model.bin) |\n| bert-base-swedish-cased-ner     | [config](https://s3.amazonaws.com/models.huggingface.co/bert/KB/bert-base-swedish-cased-ner/config.json), [vocab](https://s3.amazonaws.com/models.huggingface.co/bert/KB/bert-base-swedish-cased-ner/vocab.txt) [pytorch_model.bin](https://s3.amazonaws.com/models.huggingface.co/bert/KB/bert-base-swedish-cased-ner/pytorch_model.bin) |\n| albert-base-swedish-cased-alpha | [config](https://s3.amazonaws.com/models.huggingface.co/bert/KB/albert-base-swedish-cased-alpha/config.json), [sentencepiece model](https://s3.amazonaws.com/models.huggingface.co/bert/KB/albert-base-swedish-cased-alpha/spiece.model), [pytorch_model.bin](https://s3.amazonaws.com/models.huggingface.co/bert/KB/albert-base-swedish-cased-alpha/pytorch_model.bin) |\n\nTensorFlow model weights will be released soon.\n\n## Usage requirements / installation instructions\n\nThe examples below require Huggingface Transformers 2.4.1 and Pytorch 1.3.1 or greater. For Transformers<2.4.0 the tokenizer must be instantiated manually and the `do_lower_case` flag parameter set to `False` and `keep_accents` to `True` (for ALBERT).\n\nTo create an environment where the examples can be run, run the following in an terminal on your OS of choice.\n\n```\n# git clone https://github.com/Kungbib/swedish-bert-models\n# cd swedish-bert-models\n# python3 -m venv venv\n# source venv/bin/activate\n# pip install --upgrade pip\n# pip install -r requirements.txt\n```\n\n### BERT Base Swedish\n\nA standard BERT base for Swedish trained on a variety of sources. Vocabulary size is ~50k. Using Huggingface Transformers the model can be loaded in Python as follows:\n\n```python\nfrom transformers import AutoModel,AutoTokenizer\n\ntok = AutoTokenizer.from_pretrained('KB/bert-base-swedish-cased')\nmodel = AutoModel.from_pretrained('KB/bert-base-swedish-cased')\n```\n\n\n### BERT base fine-tuned for Swedish NER\n\nThis model is fine-tuned on the SUC 3.0 dataset. Using the Huggingface pipeline the model can be easily instantiated. For Transformer<2.4.1 it seems the tokenizer must be loaded separately to disable lower-casing of input strings:\n\n```python\nfrom transformers import pipeline\n\nnlp = pipeline('ner', model='KB/bert-base-swedish-cased-ner', tokenizer='KB/bert-base-swedish-cased-ner')\n\nnlp('Idag sl\u00e4pper KB tre spr\u00e5kmodeller.')\n```\n\nRunning the Python code above should produce in something like the result below. Entity types used are `TME` for time, `PRS` for personal names, `LOC` for locations, `EVN` for events and `ORG` for organisations. These labels are subject to change.\n\n```python\n[ { 'word': 'Idag', 'score': 0.9998126029968262, 'entity': 'TME' },\n  { 'word': 'KB',   'score': 0.9814832210540771, 'entity': 'ORG' } ]\n```\n\nThe BERT tokenizer often splits words into multiple tokens, with the subparts starting with `##`, for example the string `Engelbert k\u00f6r Volvo till Herr\u00e4ngens fotbollsklubb` gets tokenized as `Engel ##bert k\u00f6r Volvo till Herr ##\u00e4ngens fotbolls ##klubb`. To glue parts back together one can use something like this:\n\n```python\ntext = 'Engelbert tar Volvon till Tele2 Arena f\u00f6r att titta p\u00e5 Djurg\u00e5rden IF ' +\\\n       'som spelar fotboll i VM klockan tv\u00e5 p\u00e5 kv\u00e4llen.'\n\nl = []\nfor token in nlp(text):\n    if token['word'].startswith('##'):\n        l[-1]['word'] += token['word'][2:]\n    else:\n        l += [ token ]\n\nprint(l)\n```\n\nWhich should result in the following (though less cleanly formated):\n\n```python\n[ { 'word': 'Engelbert',     'score': 0.99..., 'entity': 'PRS'},\n  { 'word': 'Volvon',        'score': 0.99..., 'entity': 'OBJ'},\n  { 'word': 'Tele2',         'score': 0.99..., 'entity': 'LOC'},\n  { 'word': 'Arena',         'score': 0.99..., 'entity': 'LOC'},\n  { 'word': 'Djurg\u00e5rden',    'score': 0.99..., 'entity': 'ORG'},\n  { 'word': 'IF',            'score': 0.99..., 'entity': 'ORG'},\n  { 'word': 'VM',            'score': 0.99..., 'entity': 'EVN'},\n  { 'word': 'klockan',       'score': 0.99..., 'entity': 'TME'},\n  { 'word': 'tv\u00e5',           'score': 0.99..., 'entity': 'TME'},\n  { 'word': 'p\u00e5',            'score': 0.99..., 'entity': 'TME'},\n  { 'word': 'kv\u00e4llen',       'score': 0.54..., 'entity': 'TME'} ]\n```\n\n### ALBERT base\n\nThe easisest way to do this is, again, using Huggingface Transformers:\n\n```python\nfrom transformers import AutoModel,AutoTokenizer\n\ntok = AutoTokenizer.from_pretrained('KB/albert-base-swedish-cased-alpha'),\nmodel = AutoModel.from_pretrained('KB/albert-base-swedish-cased-alpha')\n```\n\n## Acknowledgements \u2764\ufe0f\n\n- Resources from Stockholms University, Ume\u00e5 University and Swedish Language Bank at Gothenburg University were used when fine-tuning BERT for NER.\n- Model pretraining was made partly in-house at the KBLab and partly (for material without active copyright) with the support of Cloud TPUs from Google's TensorFlow Research Cloud (TFRC).\n- Models are hosted on S3 by Huggingface \ud83e\udd17\n"
 }

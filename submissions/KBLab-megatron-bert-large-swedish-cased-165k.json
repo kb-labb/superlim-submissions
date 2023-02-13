@@ -1,63 +1,134 @@
 {
-	"repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
-	"model": {
-		"model_name": "KBLab/megatron-bert-large-swedish-cased-165k",
-		"model_type": "Encoder",
-		"number_params": 369554432,
-		"data_size": "70GB"
-	},
-	"tasks": {
-		"DaLAJ": {
-			"dev": 0.7289064901109461,
-			"test": 0.7659746762111916
-		},
-		"Swedish FAQ": {
-			"dev": 0.8929666326031901,
-			"test": 0.7966351303106034
-		},
-		"SweMNLI": {
-			"dev": 0.7764820196239198,
-			"test": 0.23161167243693914
-		},
-		"SweWinograd": {
-			"dev": 0.25870811287477946,
-			"test": 0.18895348837209303
-		},
-		"SweWinogender": {
-			"dev": null,
-			"test": {
-				"alpha": -0.29472028923662097,
-				"parity": 0.9951923076923077
-			}
-		},
-		"SweDiagnostics": {
-			"dev": null,
-			"test": null
-		},
-		"SweParaphrase": {
-			"dev": 0.9090765743429253,
-			"test": 0.8739084572421768
-		},
-		"SweWiC": {
-			"dev": 0.3086671120160326,
-			"test": 0.305979863347711
-		},
-		"SweSAT": {
-			"dev": null,
-			"test": null
-		},
-		"Swedish Analogy": {
-			"dev": null,
-			"test": null
-		},
-		"SuperSim": {
-			"dev": null,
-			"test": null
-		},
-		"ABSA": {
-			"dev": 0.5728301149818422,
-			"test": 0.5090040876212543
-		}
-	},
-	"model_card": "---\nlanguage:\n- sv\n\n---\n\n# Megatron-BERT-large Swedish 165k\n\nThis BERT model was trained using the Megatron-LM library.\nThe size of the model is a regular BERT-large with 340M parameters.\nThe model was trained on about 70GB of data, consisting mostly of OSCAR and Swedish newspaper text curated by the National Library of Sweden.\n\nTraining was done for 165k training steps using a batch size of 8k; the number of training steps is set to 500k, meaning that this version is a checkpoint.\nThe hyperparameters for training followed the setting for RoBERTa.\n\n\nThe model has three sister models trained on the same dataset:\n- [🤗 BERT Swedish](https://huggingface.co/KBLab/bert-base-swedish-cased-new)\n- [Megatron-BERT-base-600k](https://huggingface.co/KBLab/megatron-bert-base-swedish-cased-600k)\n- [Megatron-BERT-base-125k](https://huggingface.co/KBLab/megatron-bert-base-swedish-cased-125k)\n\nand an earlier checkpoint\n- [Megatron-BERT-large-110k](https://huggingface.co/KBLab/megatron-bert-large-swedish-cased-110k)\n\n## Acknowledgements\n\nWe gratefully acknowledge the HPC RIVR consortium (https://www.hpc-rivr.si) and EuroHPC JU (https://eurohpc-ju.europa.eu) for funding this research by providing computing resources of the HPC system Vega at the Institute of Information Science (https://www.izum.si)."
+    "repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
+    "model": {
+        "model_name": "KBLab/megatron-bert-large-swedish-cased-165k",
+        "model_type": "Encoder",
+        "number_params": 369554432,
+        "data_size": 70
+    },
+    "tasks": {
+        "DaLAJ": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.7289064901109461
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.7659746762111916
+            }
+        },
+        "Swedish FAQ": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.8929666326031901
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.7966351303106034
+            }
+        },
+        "SweMNLI": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.7764820196239198
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.23161167243693914
+            }
+        },
+        "SweWinograd": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.25870811287477946
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.18895348837209303
+            }
+        },
+        "SweWinogender": {
+            "dev": {
+                "f1": null,
+                "parity": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "parity": 0.9951923076923077,
+                "alpha": -0.29472028923662097
+            }
+        },
+        "SweDiagnostics": {
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
+        },
+        "SweParaphrase": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.9090765743429253
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.8739084572421768
+            }
+        },
+        "SweWiC": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.3086671120160326
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.305979863347711
+            }
+        },
+        "SweSAT": {
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
+        },
+        "Swedish Analogy": {
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
+        },
+        "SuperSim": {
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
+        },
+        "ABSA": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.5728301149818422
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.5090040876212543
+            }
+        }
+    },
+    "model_card": "---\nlanguage:\n- sv\n\n---\n\n# Megatron-BERT-large Swedish 165k\n\nThis BERT model was trained using the Megatron-LM library.\nThe size of the model is a regular BERT-large with 340M parameters.\nThe model was trained on about 70GB of data, consisting mostly of OSCAR and Swedish newspaper text curated by the National Library of Sweden.\n\nTraining was done for 165k training steps using a batch size of 8k; the number of training steps is set to 500k, meaning that this version is a checkpoint.\nThe hyperparameters for training followed the setting for RoBERTa.\n\n\nThe model has three sister models trained on the same dataset:\n- [\ud83e\udd17 BERT Swedish](https://huggingface.co/KBLab/bert-base-swedish-cased-new)\n- [Megatron-BERT-base-600k](https://huggingface.co/KBLab/megatron-bert-base-swedish-cased-600k)\n- [Megatron-BERT-base-125k](https://huggingface.co/KBLab/megatron-bert-base-swedish-cased-125k)\n\nand an earlier checkpoint\n- [Megatron-BERT-large-110k](https://huggingface.co/KBLab/megatron-bert-large-swedish-cased-110k)\n\n## Acknowledgements\n\nWe gratefully acknowledge the HPC RIVR consortium (https://www.hpc-rivr.si) and EuroHPC JU (https://eurohpc-ju.europa.eu) for funding this research by providing computing resources of the HPC system Vega at the Institute of Information Science (https://www.izum.si)."
 }

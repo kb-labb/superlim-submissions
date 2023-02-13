@@ -1,63 +1,134 @@
 {
-	"repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
-	"model": {
-		"model_name": "AI-Nordics/bert-large-swedish-cased",
-		"model_type": "Encoder",
-		"number_params": 335215616,
-		"data_size": "85GB"
-	},
-	"tasks": {
-		"DaLAJ": {
-			"dev": 0.7207640261174937,
-			"test": 0.7586003123549028
-		},
-		"Swedish FAQ": {
-			"dev": 0.8641258586306226,
-			"test": 0.7098025230686935
-		},
-		"SweMNLI": {
-			"dev": 0.746818923205917,
-			"test": 0.24059404928605732
-		},
-		"SweWinograd": {
-			"dev": 0.2404705882352941,
-			"test": 0.19152233978030864
-		},
-		"SweWinogender": {
-			"dev": null,
-			"test": {
-				"alpha": -0.3322649572649572,
-				"parity": 1.0
-			}
-		},
-		"SweDiagnostics": {
-			"dev": null,
-			"test": null
-		},
-		"SweParaphrase": {
-			"dev": 0.8956240018184479,
-			"test": 0.8623532069937242
-		},
-		"SweWiC": {
-			"dev": 0.2854077253218884,
-			"test": 0.3162982430875576
-		},
-		"SweSAT": {
-			"dev": null,
-			"test": null
-		},
-		"Swedish Analogy": {
-			"dev": null,
-			"test": null
-		},
-		"SuperSim": {
-			"dev": null,
-			"test": null
-		},
-		"ABSA": {
-			"dev": 0.5348609746632007,
-			"test": 0.48138644238395323
-		}
-	},
-	"model_card": "---\nlanguage: sv\n---\n\n# A Swedish Bert model\n\n## Model description\nThis model follows the Bert Large model architecture as implemented in [Megatron-LM framework](https://github.com/NVIDIA/Megatron-LM). It was trained with a batch size of 512 in 600k steps. The model contains following parameters:\n<figure>\n\n| Hyperparameter       | Value      |\n|----------------------|------------|\n| \\\\(n_{parameters}\\\\) | 340M |\n| \\\\(n_{layers}\\\\)     | 24    |\n| \\\\(n_{heads}\\\\)      | 16         |\n| \\\\(n_{ctx}\\\\)        | 1024       |\n| \\\\(n_{vocab}\\\\)        | 30592       |\n\n\n## Training data\nThe model is pretrained on a Swedish text corpus of around 85 GB from a variety of sources as shown below.\n<figure>\n\n| Dataset       | Genre      | Size(GB)|\n|----------------------|------|------|\n| Anföranden      | Politics  |0.9|\n|DCEP|Politics|0.6|\n|DGT|Politics|0.7|\n|Fass|Medical|0.6|\n|Författningar|Legal|0.1|\n|Web data|Misc|45.0|\n|JRC|Legal|0.4|\n|Litteraturbanken|Books|0.3O|\n|SCAR|Misc|28.0|\n|SOU|Politics|5.3|\n|Subtitles|Drama|1.3|\n|Wikipedia|Facts|1.8|\n\n\n## Intended uses & limitations\nThe raw model can be used for the usual tasks of masked language modeling or next sentence prediction. It is also often fine-tuned on a downstream task to improve its performance in a specific domain/task.\n<br>\n<br>\n\n## How to use\n\n```python\nfrom transformers import AutoTokenizer, AutoModelForMaskedLM\ntokenizer = AutoTokenizer.from_pretrained(\"AI-Nordics/bert-large-swedish-cased\")\nmodel = AutoModelForMaskedLM.from_pretrained(\"AI-Nordics/bert-large-swedish-cased\")\n"
+    "repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
+    "model": {
+        "model_name": "AI-Nordics/bert-large-swedish-cased",
+        "model_type": "Encoder",
+        "number_params": 335215616,
+        "data_size": 85
+    },
+    "tasks": {
+        "DaLAJ": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.7207640261174937
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.7586003123549028
+            }
+        },
+        "Swedish FAQ": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.8641258586306226
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.7098025230686935
+            }
+        },
+        "SweMNLI": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.746818923205917
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.24059404928605732
+            }
+        },
+        "SweWinograd": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.2404705882352941
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.19152233978030864
+            }
+        },
+        "SweWinogender": {
+            "dev": {
+                "f1": null,
+                "parity": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "parity": 1.0,
+                "alpha": -0.3322649572649572
+            }
+        },
+        "SweDiagnostics": {
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
+        },
+        "SweParaphrase": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.8956240018184479
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.8623532069937242
+            }
+        },
+        "SweWiC": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.2854077253218884
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.3162982430875576
+            }
+        },
+        "SweSAT": {
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
+        },
+        "Swedish Analogy": {
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
+        },
+        "SuperSim": {
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
+        },
+        "ABSA": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.5348609746632007
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.48138644238395323
+            }
+        }
+    },
+    "model_card": "---\nlanguage: sv\n---\n\n# A Swedish Bert model\n\n## Model description\nThis model follows the Bert Large model architecture as implemented in [Megatron-LM framework](https://github.com/NVIDIA/Megatron-LM). It was trained with a batch size of 512 in 600k steps. The model contains following parameters:\n<figure>\n\n| Hyperparameter       | Value      |\n|----------------------|------------|\n| \\\\(n_{parameters}\\\\) | 340M |\n| \\\\(n_{layers}\\\\)     | 24    |\n| \\\\(n_{heads}\\\\)      | 16         |\n| \\\\(n_{ctx}\\\\)        | 1024       |\n| \\\\(n_{vocab}\\\\)        | 30592       |\n\n\n## Training data\nThe model is pretrained on a Swedish text corpus of around 85 GB from a variety of sources as shown below.\n<figure>\n\n| Dataset       | Genre      | Size(GB)|\n|----------------------|------|------|\n| Anf\u00f6randen      | Politics  |0.9|\n|DCEP|Politics|0.6|\n|DGT|Politics|0.7|\n|Fass|Medical|0.6|\n|F\u00f6rfattningar|Legal|0.1|\n|Web data|Misc|45.0|\n|JRC|Legal|0.4|\n|Litteraturbanken|Books|0.3O|\n|SCAR|Misc|28.0|\n|SOU|Politics|5.3|\n|Subtitles|Drama|1.3|\n|Wikipedia|Facts|1.8|\n\n\n## Intended uses & limitations\nThe raw model can be used for the usual tasks of masked language modeling or next sentence prediction. It is also often fine-tuned on a downstream task to improve its performance in a specific domain/task.\n<br>\n<br>\n\n## How to use\n\n```python\nfrom transformers import AutoTokenizer, AutoModelForMaskedLM\ntokenizer = AutoTokenizer.from_pretrained(\"AI-Nordics/bert-large-swedish-cased\")\nmodel = AutoModelForMaskedLM.from_pretrained(\"AI-Nordics/bert-large-swedish-cased\")\n"
 }

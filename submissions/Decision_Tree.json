@@ -1,63 +1,134 @@
 {
-	"repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
-	"model": {
-		"model_name": "Decision Tree",
-		"model_type": "Non-transformer",
-		"number_params": null,
-		"data_size": null
-	},
-	"tasks": {
-		"DaLAJ": {
-			"dev": 0.2838470623461308,
-			"test": 0.28646252446230536
-		},
-		"Swedish FAQ": {
-			"dev": 0.01859082438548232,
-			"test": 0.025391319815012525
-		},
-		"SweMNLI": {
-			"dev": 0.14350550055595124,
-			"test": 0.01900773195876282
-		},
-		"SweWinograd": {
-			"dev": 0.030716521944592068,
-			"test": -0.05863090597224385
-		},
-		"SweWinogender": {
-			"dev": null,
-			"test": {
-				"alpha": null,
-				"parity": null
-			}
-		},
-		"SweDiagnostics": {
-			"dev": null,
-			"test": null
-		},
-		"SweParaphrase": {
-			"dev": 0.24811500778522433,
-			"test": 0.18448661290607626
-		},
-		"SweWiC": {
-			"dev": 0.04057623049219694,
-			"test": 0.039862613544709546
-		},
-		"SweSAT": {
-			"dev": null,
-			"test": null
-		},
-		"Swedish Analogy": {
-			"dev": null,
-			"test": null
-		},
-		"SuperSim": {
-			"dev": null,
-			"test": null
-		},
-		"ABSA": {
-			"dev": 0.21058409005921885,
-			"test": 0.139738847393735
-		}
-	},
-	"model_card": "The model was trained on with the vectorizer performing best on the dev-set of the following:\nhttps://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html\nhttps://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html\nhttps://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html\nhttps://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html"
+    "repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
+    "model": {
+        "model_name": "Decision Tree",
+        "model_type": "Non-transformer",
+        "number_params": null,
+        "data_size": null
+    },
+    "tasks": {
+        "DaLAJ": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.2838470623461308
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.28646252446230536
+            }
+        },
+        "Swedish FAQ": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.01859082438548232
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.025391319815012525
+            }
+        },
+        "SweMNLI": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.14350550055595124
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.01900773195876282
+            }
+        },
+        "SweWinograd": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.030716521944592068
+            },
+            "test": {
+                "f1": null,
+                "alpha": -0.05863090597224385
+            }
+        },
+        "SweWinogender": {
+            "dev": {
+                "f1": null,
+                "parity": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "parity": null,
+                "alpha": null
+            }
+        },
+        "SweDiagnostics": {
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
+        },
+        "SweParaphrase": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.24811500778522433
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.18448661290607626
+            }
+        },
+        "SweWiC": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.04057623049219694
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.039862613544709546
+            }
+        },
+        "SweSAT": {
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
+        },
+        "Swedish Analogy": {
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
+        },
+        "SuperSim": {
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
+        },
+        "ABSA": {
+            "dev": {
+                "f1": null,
+                "alpha": 0.21058409005921885
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.139738847393735
+            }
+        }
+    },
+    "model_card": "The model was trained on with the vectorizer performing best on the dev-set of the following:\nhttps://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html\nhttps://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html\nhttps://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html\nhttps://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html"
 }

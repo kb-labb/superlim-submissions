@@ -1,63 +1,134 @@
 {
-	"repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
-	"model": {
-		"model_name": "MaxFreq/Avg",
-		"model_type": "Non-transformer",
-		"number_params": null,
-		"data_size": null
-	},
-	"tasks": {
-		"DaLAJ": {
-			"dev": -0.344857020913359,
-			"test": -0.3362134303471276
-		},
-		"Swedish FAQ": {
-			"dev": -0.31618486687901926,
-			"test": -0.3095397744590065
-		},
-		"SweMNLI": {
-			"dev": -0.33769934408678215,
-			"test": -0.5345110363847938
-		},
-		"SweWinograd": {
-			"dev": -0.25116279069767433,
-			"test": -0.17721518987341778
-		},
-		"SweWinogender": {
-			"dev": null,
-			"test": {
-				"alpha": null,
-				"parity": null
-			}
-		},
-		"SweDiagnostics": {
-			"dev": null,
-			"test": null
-		},
-		"SweParaphrase": {
-			"dev": -0.024288260100341574,
-			"test": -0.0014961654401421942
-		},
-		"SweWiC": {
-			"dev": -0.3320000000000001,
-			"test": -0.33266666666666667
-		},
-		"SweSAT": {
-			"dev": null,
-			"test": null
-		},
-		"Swedish Analogy": {
-			"dev": null,
-			"test": null
-		},
-		"SuperSim": {
-			"dev": null,
-			"test": null
-		},
-		"ABSA": {
-			"dev": -0.030990785720815373,
-			"test": -0.05179039829775389
-		}
-	},
-	"model_card": "This model uses Max Frequency for classification, and the mean strategy for regression\nhttps://scikit-learn.org/stable/modules/generated/sklearn.dummy.DummyClassifier.html\nhttps://scikit-learn.org/stable/modules/generated/sklearn.dummy.DummyRegressor.html"
+    "repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
+    "model": {
+        "model_name": "MaxFreq/Avg",
+        "model_type": "Non-transformer",
+        "number_params": null,
+        "data_size": null
+    },
+    "tasks": {
+        "DaLAJ": {
+            "dev": {
+                "f1": null,
+                "alpha": -0.344857020913359
+            },
+            "test": {
+                "f1": null,
+                "alpha": -0.3362134303471276
+            }
+        },
+        "Swedish FAQ": {
+            "dev": {
+                "f1": null,
+                "alpha": -0.31618486687901926
+            },
+            "test": {
+                "f1": null,
+                "alpha": -0.3095397744590065
+            }
+        },
+        "SweMNLI": {
+            "dev": {
+                "f1": null,
+                "alpha": -0.33769934408678215
+            },
+            "test": {
+                "f1": null,
+                "alpha": -0.5345110363847938
+            }
+        },
+        "SweWinograd": {
+            "dev": {
+                "f1": null,
+                "alpha": -0.25116279069767433
+            },
+            "test": {
+                "f1": null,
+                "alpha": -0.17721518987341778
+            }
+        },
+        "SweWinogender": {
+            "dev": {
+                "f1": null,
+                "parity": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "parity": null,
+                "alpha": null
+            }
+        },
+        "SweDiagnostics": {
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
+        },
+        "SweParaphrase": {
+            "dev": {
+                "f1": null,
+                "alpha": -0.024288260100341574
+            },
+            "test": {
+                "f1": null,
+                "alpha": -0.0014961654401421942
+            }
+        },
+        "SweWiC": {
+            "dev": {
+                "f1": null,
+                "alpha": -0.3320000000000001
+            },
+            "test": {
+                "f1": null,
+                "alpha": -0.33266666666666667
+            }
+        },
+        "SweSAT": {
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
+        },
+        "Swedish Analogy": {
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
+        },
+        "SuperSim": {
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
+        },
+        "ABSA": {
+            "dev": {
+                "f1": null,
+                "alpha": -0.030990785720815373
+            },
+            "test": {
+                "f1": null,
+                "alpha": -0.05179039829775389
+            }
+        }
+    },
+    "model_card": "This model uses Max Frequency for classification, and the mean strategy for regression\nhttps://scikit-learn.org/stable/modules/generated/sklearn.dummy.DummyClassifier.html\nhttps://scikit-learn.org/stable/modules/generated/sklearn.dummy.DummyRegressor.html"
 }

@@ -8,52 +8,126 @@
     },
     "tasks": {
         "DaLAJ": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
         },
         "Swedish FAQ": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
         },
         "SweMNLI": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
         },
         "SweWinograd": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
         },
         "SweWinogender": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "parity": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "parity": null,
+                "alpha": null
+            }
         },
         "SweDiagnostics": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
         },
         "SweParaphrase": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
         },
         "SweWiC": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
         },
         "SweSAT": {
-            "dev": null,
-            "test": 0.4845
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": 0.4845
+            }
         },
         "Swedish Analogy": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
         },
         "SuperSim": {
-            "dev": null,
-            "test": -0.103
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": -0.103
+            }
         },
         "ABSA": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "alpha": null
+            }
         }
     },
     "model_card": "https://github.com/explosion/spacy-models/releases/tag/sv_core_news_lg-3.5.0"

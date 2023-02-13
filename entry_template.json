@@ -8,52 +8,192 @@
     },
     "tasks": {
         "DaLAJ": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            },
+            "test": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            }
         },
         "Swedish FAQ": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            },
+            "test": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            }
         },
         "SweFraCas": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            },
+            "test": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            }
         },
         "SweWinograd": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            },
+            "test": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            }
         },
         "SweWinogender": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "parity": null,
+                "alpha": null
+            },
+            "test": {
+                "f1": null,
+                "parity": null,
+                "alpha": null
+            }
         },
         "SweDiagnostics": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            },
+            "test": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            }
         },
         "SweParaphrase": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            },
+            "test": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            }
         },
         "SweWiC": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            },
+            "test": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            }
         },
         "SweSAT": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            },
+            "test": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            }
         },
         "Swedish Analogy": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            },
+            "test": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            }
         },
         "SuperSim": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            },
+            "test": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            }
         },
         "ABSA": {
-            "dev": null,
-            "test": null
+            "dev": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            },
+            "test": {
+                "f1": null,
+                "alpha": {
+                    "f1": null,
+                    "alpha": null
+                }
+            }
         }
     },
     "model_card": null
