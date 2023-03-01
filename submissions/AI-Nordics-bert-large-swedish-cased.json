@@ -7,126 +7,131 @@
         "data_size": 85
     },
     "tasks": {
-        "DaLAJ": {
+        "absabank-imm": {
             "dev": {
-                "f1": null,
-                "alpha": 0.7207640261174937
+                "other": null,
+                "alpha": 0.534861
             },
             "test": {
-                "f1": null,
-                "alpha": 0.7586003123549028
+                "other": null,
+                "alpha": 0.481386
             }
         },
-        "Swedish FAQ": {
+        "argumentation_sentences": {
             "dev": {
-                "f1": null,
-                "alpha": 0.8641258586306226
-            },
-            "test": {
-                "f1": null,
-                "alpha": 0.7098025230686935
-            }
-        },
-        "SweMNLI": {
-            "dev": {
-                "f1": null,
-                "alpha": 0.746818923205917
-            },
-            "test": {
-                "f1": null,
-                "alpha": 0.24059404928605732
-            }
-        },
-        "SweWinograd": {
-            "dev": {
-                "f1": null,
-                "alpha": 0.2404705882352941
-            },
-            "test": {
-                "f1": null,
-                "alpha": 0.19152233978030864
-            }
-        },
-        "SweWinogender": {
-            "dev": {
-                "f1": null,
-                "parity": null,
+                "other": null,
                 "alpha": null
             },
             "test": {
-                "f1": null,
-                "parity": 1.0,
-                "alpha": -0.3322649572649572
-            }
-        },
-        "SweDiagnostics": {
-            "dev": {
-                "f1": null,
-                "alpha": null
-            },
-            "test": {
-                "f1": null,
+                "other": null,
                 "alpha": null
             }
         },
-        "SweParaphrase": {
+        "dalaj-ged-superlim": {
             "dev": {
-                "f1": null,
-                "alpha": 0.8956240018184479
+                "other": null,
+                "alpha": 0.716007
             },
             "test": {
-                "f1": null,
-                "alpha": 0.8623532069937242
+                "other": null,
+                "alpha": 0.745449
             }
         },
-        "SweWiC": {
-            "dev": {
-                "f1": null,
-                "alpha": 0.2854077253218884
-            },
+        "supersim-superlim-relatedness": {
             "test": {
-                "f1": null,
-                "alpha": 0.3162982430875576
-            }
-        },
-        "SweSAT": {
-            "dev": {
-                "f1": null,
-                "alpha": null
-            },
-            "test": {
-                "f1": null,
+                "other": null,
                 "alpha": null
             }
         },
-        "Swedish Analogy": {
-            "dev": {
-                "f1": null,
-                "alpha": null
-            },
+        "supersim-superlim-similarity": {
             "test": {
-                "f1": null,
+                "other": null,
                 "alpha": null
             }
         },
-        "SuperSim": {
-            "dev": {
-                "f1": null,
-                "alpha": null
-            },
+        "sweanalogy": {
             "test": {
-                "f1": null,
+                "other": null,
+                "accuracy": null
+            }
+        },
+        "swediagnostics": {
+            "test": {
+                "other": null,
                 "alpha": null
             }
         },
-        "ABSA": {
+        "swedn": {
             "dev": {
-                "f1": null,
-                "alpha": 0.5348609746632007
+                "other": null,
+                "f1": null
             },
             "test": {
-                "f1": null,
-                "alpha": 0.48138644238395323
+                "other": null,
+                "f1": null
+            }
+        },
+        "swefaq": {
+            "dev": {
+                "other": null,
+                "alpha": 0.864126
+            },
+            "test": {
+                "other": null,
+                "alpha": 0.709803
+            }
+        },
+        "swemnli": {
+            "dev": {
+                "other": null,
+                "alpha": 0.746819
+            },
+            "test": {
+                "other": null,
+                "alpha": 0.240594
+            }
+        },
+        "sweparaphrase": {
+            "dev": {
+                "other": null,
+                "alpha": 0.895624
+            },
+            "test": {
+                "other": null,
+                "alpha": 0.862353
+            }
+        },
+        "swesat-synonyms": {
+            "test": {
+                "other": null,
+                "alpha": null
+            }
+        },
+        "swewic": {
+            "dev": {
+                "other": null,
+                "alpha": 0.285408
+            },
+            "test": {
+                "other": null,
+                "alpha": 0.316298
+            }
+        },
+        "swewinogender": {
+            "test": {
+                "other": null,
+                "alpha": -0.332265,
+                "parity": 1.0
+            }
+        },
+        "swewinograd": {
+            "dev": {
+                "other": null,
+                "alpha": 0.240471
+            },
+            "test": {
+                "other": null,
+                "alpha": 0.191522
             }
         }
     },
