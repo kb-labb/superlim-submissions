@@ -1,0 +1,189 @@
+{
+    "repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
+    "model": {
+        "model_name": "xlm-roberta-base",
+        "model_type": "Encoder",
+        "number_params": 278043648,
+        "data_size": 2500
+    },
+    "tasks": {
+        "absabank-imm": {
+            "dev": {
+                "N": 487,
+                "alpha": 0.39869751365501294,
+                "spearmanr": 0.5122567468987388,
+                "pearsonr": 0.5211193426214772
+            },
+            "test": {
+                "N": 487,
+                "alpha": 0.36594697396002573,
+                "spearmanr": 0.4798652180055723,
+                "pearsonr": 0.4582114211810479
+            }
+        },
+        "argumentation-sentences": {
+            "dev": {
+                "N": 750,
+                "alpha": 0.9175262269624315,
+                "accuracy": 0.9466666666666667,
+                "f1": 0.9419288585181006
+            },
+            "test": {
+                "N": 1065,
+                "alpha": 0.4971570532378413,
+                "accuracy": 0.6685446009389672,
+                "f1": 0.6637676993638851
+            }
+        },
+        "dalaj-ged-superlim": {
+            "dev": {
+                "N": 4702,
+                "alpha": 0.6715108870289933,
+                "accuracy": 0.8373032752020417,
+                "f1": 0.835737976263993
+            },
+            "test": {
+                "N": 4371,
+                "alpha": 0.7005769207394221,
+                "accuracy": 0.851063829787234,
+                "f1": 0.8502713328626033
+            }
+        },
+        "supersim-superlim-relatedness": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            }
+        },
+        "supersim-superlim-similarity": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            }
+        },
+        "sweanalogy": {
+            "test": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            }
+        },
+        "swediagnostics": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
+            }
+        },
+        "swedn": {
+            "dev": {
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
+            },
+            "test": {
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
+            }
+        },
+        "swefaq": {
+            "dev": {
+                "N": 110,
+                "accuracy": 0.6454545454545455,
+                "pseudoalpha": 0.6255342080599813
+            },
+            "test": {
+                "N": 109,
+                "accuracy": 0.5045871559633027,
+                "pseudoalpha": 0.47675210441691096
+            }
+        },
+        "swenli": {
+            "dev": {
+                "N": 9815,
+                "alpha": 0.7204073776687495,
+                "accuracy": 0.81365257259297,
+                "f1": 0.8136893999202707
+            },
+            "test": {
+                "N": 305,
+                "alpha": 0.18562788018433185,
+                "accuracy": 0.5737704918032787,
+                "f1": 0.4561224489795918
+            }
+        },
+        "sweparaphrase": {
+            "dev": {
+                "N": 1499,
+                "alpha": 0.8713512180627154,
+                "spearmanr": 0.8676271511679728,
+                "pearsonr": 0.8731473539221096
+            },
+            "test": {
+                "N": 1378,
+                "alpha": 0.8127967445183096,
+                "spearmanr": 0.8065604866199412,
+                "pearsonr": 0.8196692806298872
+            }
+        },
+        "swesat-synonyms": {
+            "test": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            }
+        },
+        "swewic": {
+            "dev": {
+                "N": 500,
+                "alpha": 0.2539935064935065,
+                "accuracy": 0.632,
+                "f1": 0.6266233766233766
+            },
+            "test": {
+                "N": 1000,
+                "alpha": 0.18114466871102664,
+                "accuracy": 0.605,
+                "f1": 0.5903675181145707
+            }
+        },
+        "swewinogender": {
+            "test": {
+                "N": 624,
+                "alpha": -0.29802359635176967,
+                "parity": 0.3317307692307692,
+                "accuracy": 0.5016025641025641,
+                "f1": 0.35046774328508074
+            }
+        },
+        "swewinograd": {
+            "dev": {
+                "N": 135,
+                "alpha": -0.25116279069767433,
+                "accuracy": 0.5925925925925926,
+                "f1": 0.37209302325581395
+            },
+            "test": {
+                "N": 140,
+                "alpha": -0.17721518987341778,
+                "accuracy": 0.6928571428571428,
+                "f1": 0.4092827004219409
+            }
+        }
+    },
+    "model_card": "---\ntags:\n- exbert\nlanguage:\n- multilingual\n- af\n- am\n- ar\n- as\n- az\n- be\n- bg\n- bn\n- br\n- bs\n- ca\n- cs\n- cy\n- da\n- de\n- el\n- en\n- eo\n- es\n- et\n- eu\n- fa\n- fi\n- fr\n- fy\n- ga\n- gd\n- gl\n- gu\n- ha\n- he\n- hi\n- hr\n- hu\n- hy\n- id\n- is\n- it\n- ja\n- jv\n- ka\n- kk\n- km\n- kn\n- ko\n- ku\n- ky\n- la\n- lo\n- lt\n- lv\n- mg\n- mk\n- ml\n- mn\n- mr\n- ms\n- my\n- ne\n- nl\n- no\n- om\n- or\n- pa\n- pl\n- ps\n- pt\n- ro\n- ru\n- sa\n- sd\n- si\n- sk\n- sl\n- so\n- sq\n- sr\n- su\n- sv\n- sw\n- ta\n- te\n- th\n- tl\n- tr\n- ug\n- uk\n- ur\n- uz\n- vi\n- xh\n- yi\n- zh\nlicense: mit\n---\n\n# XLM-RoBERTa (base-sized model)\n\nXLM-RoBERTa model pre-trained on 2.5TB of filtered CommonCrawl data containing 100 languages. It was introduced in the paper [Unsupervised Cross-lingual Representation Learning at Scale](https://arxiv.org/abs/1911.02116) by Conneau et al. and first released in [this repository](https://github.com/pytorch/fairseq/tree/master/examples/xlmr).\n\nDisclaimer: The team releasing XLM-RoBERTa did not write a model card for this model so this model card has been written by the Hugging Face team.\n\n## Model description\n\nXLM-RoBERTa is a multilingual version of RoBERTa. It is pre-trained on 2.5TB of filtered CommonCrawl data containing 100 languages.\n\nRoBERTa is a transformers model pretrained on a large corpus in a self-supervised fashion. This means it was pretrained on the raw texts only, with no humans labelling them in any way (which is why it can use lots of publicly available data) with an automatic process to generate inputs and labels from those texts.\n\nMore precisely, it was pretrained with the Masked language modeling (MLM) objective. Taking a sentence, the model randomly masks 15% of the words in the input then run the entire masked sentence through the model and has to predict the masked words. This is different from traditional recurrent neural networks (RNNs) that usually see the words one after the other, or from autoregressive models like GPT which internally mask the future tokens. It allows the model to learn a bidirectional representation of the sentence.\n\nThis way, the model learns an inner representation of 100 languages that can then be used to extract features useful for downstream tasks: if you have a dataset of labeled sentences for instance, you can train a standard classifier using the features produced by the XLM-RoBERTa model as inputs.\n\n## Intended uses & limitations\n\nYou can use the raw model for masked language modeling, but it's mostly intended to be fine-tuned on a downstream task. See the [model hub](https://huggingface.co/models?search=xlm-roberta) to look for fine-tuned versions on a task that interests you.\n\nNote that this model is primarily aimed at being fine-tuned on tasks that use the whole sentence (potentially masked) to make decisions, such as sequence classification, token classification or question answering. For tasks such as text generation, you should look at models like GPT2.\n\n## Usage\n\nYou can use this model directly with a pipeline for masked language modeling:\n\n```python\n>>> from transformers import pipeline\n>>> unmasker = pipeline('fill-mask', model='xlm-roberta-base')\n>>> unmasker(\"Hello I'm a <mask> model.\")\n\n[{'score': 0.10563907772302628,\n  'sequence': \"Hello I'm a fashion model.\",\n  'token': 54543,\n  'token_str': 'fashion'},\n {'score': 0.08015287667512894,\n  'sequence': \"Hello I'm a new model.\",\n  'token': 3525,\n  'token_str': 'new'},\n {'score': 0.033413201570510864,\n  'sequence': \"Hello I'm a model model.\",\n  'token': 3299,\n  'token_str': 'model'},\n {'score': 0.030217764899134636,\n  'sequence': \"Hello I'm a French model.\",\n  'token': 92265,\n  'token_str': 'French'},\n {'score': 0.026436051353812218,\n  'sequence': \"Hello I'm a sexy model.\",\n  'token': 17473,\n  'token_str': 'sexy'}]\n```\n\nHere is how to use this model to get the features of a given text in PyTorch:\n\n```python\nfrom transformers import AutoTokenizer, AutoModelForMaskedLM\n\ntokenizer = AutoTokenizer.from_pretrained('xlm-roberta-base')\nmodel = AutoModelForMaskedLM.from_pretrained(\"xlm-roberta-base\")\n\n# prepare input\ntext = \"Replace me by any text you'd like.\"\nencoded_input = tokenizer(text, return_tensors='pt')\n\n# forward pass\noutput = model(**encoded_input)\n```\n\n### BibTeX entry and citation info\n\n```bibtex\n@article{DBLP:journals/corr/abs-1911-02116,\n  author    = {Alexis Conneau and\n               Kartikay Khandelwal and\n               Naman Goyal and\n               Vishrav Chaudhary and\n               Guillaume Wenzek and\n               Francisco Guzm{\\'{a}}n and\n               Edouard Grave and\n               Myle Ott and\n               Luke Zettlemoyer and\n               Veselin Stoyanov},\n  title     = {Unsupervised Cross-lingual Representation Learning at Scale},\n  journal   = {CoRR},\n  volume    = {abs/1911.02116},\n  year      = {2019},\n  url       = {http://arxiv.org/abs/1911.02116},\n  eprinttype = {arXiv},\n  eprint    = {1911.02116},\n  timestamp = {Mon, 11 Nov 2019 18:38:09 +0100},\n  biburl    = {https://dblp.org/rec/journals/corr/abs-1911-02116.bib},\n  bibsource = {dblp computer science bibliography, https://dblp.org}\n}\n```\n\n<a href=\"https://huggingface.co/exbert/?model=xlm-roberta-base\">\n\t<img width=\"300px\" src=\"https://cdn-media.huggingface.co/exbert/button.png\">\n</a>"
+}

@@ -1,0 +1,189 @@
+{
+    "repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
+    "model": {
+        "model_name": "Random",
+        "model_type": "Non-transformer",
+        "number_params": null,
+        "data_size": null
+    },
+    "tasks": {
+        "absabank-imm": {
+            "dev": {
+                "N": 487,
+                "alpha": -0.05666557742260436,
+                "spearmanr": -0.012464250590452834,
+                "pearsonr": -0.028857731894004857
+            },
+            "test": {
+                "N": 487,
+                "alpha": 0.00783216702067524,
+                "spearmanr": 0.07794297571933075,
+                "pearsonr": 0.07366185685137
+            }
+        },
+        "argumentation-sentences": {
+            "dev": {
+                "N": 750,
+                "alpha": 0.004891021548926289,
+                "accuracy": 0.34,
+                "f1": 0.3394102374015975
+            },
+            "test": {
+                "N": 1065,
+                "alpha": 0.013238277693954137,
+                "accuracy": 0.3455399061032864,
+                "f1": 0.3413099879947908
+            }
+        },
+        "dalaj-ged-superlim": {
+            "dev": {
+                "N": 4702,
+                "alpha": -0.03579366790886973,
+                "accuracy": 0.48213526159081244,
+                "f1": 0.48204808821572853
+            },
+            "test": {
+                "N": 4371,
+                "alpha": 0.007024860015830692,
+                "accuracy": 0.5035460992907801,
+                "f1": 0.5034556301486324
+            }
+        },
+        "supersim-superlim-relatedness": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            }
+        },
+        "supersim-superlim-similarity": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            }
+        },
+        "sweanalogy": {
+            "test": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            }
+        },
+        "swediagnostics": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
+            }
+        },
+        "swedn": {
+            "dev": {
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
+            },
+            "test": {
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
+            }
+        },
+        "swefaq": {
+            "dev": {
+                "N": 110,
+                "accuracy": 0.09090909090909091,
+                "pseudoalpha": 0.039831302717900655
+            },
+            "test": {
+                "N": 109,
+                "accuracy": 0.06422018348623854,
+                "pseudoalpha": 0.011642863898609667
+            }
+        },
+        "swenli": {
+            "dev": {
+                "N": 9815,
+                "alpha": 0.002678749779494005,
+                "accuracy": 0.335303107488538,
+                "f1": 0.3351834059508245
+            },
+            "test": {
+                "N": 305,
+                "alpha": -0.09063262909806635,
+                "accuracy": 0.30491803278688523,
+                "f1": 0.2680794090866033
+            }
+        },
+        "sweparaphrase": {
+            "dev": {
+                "N": 1499,
+                "alpha": -0.03300495089740574,
+                "spearmanr": -0.029812914098916603,
+                "pearsonr": -0.030504143262051378
+            },
+            "test": {
+                "N": 1378,
+                "alpha": -0.042781927586510005,
+                "spearmanr": -0.036809889772878863,
+                "pearsonr": -0.04192793144713906
+            }
+        },
+        "swesat-synonyms": {
+            "test": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            }
+        },
+        "swewic": {
+            "dev": {
+                "N": 500,
+                "alpha": 0.056808180377974415,
+                "accuracy": 0.528,
+                "f1": 0.5279320222111984
+            },
+            "test": {
+                "N": 1000,
+                "alpha": -0.009544467678916257,
+                "accuracy": 0.495,
+                "f1": 0.49497525378743557
+            }
+        },
+        "swewinogender": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "parity": null,
+                "accuracy": null,
+                "f1": null
+            }
+        },
+        "swewinograd": {
+            "dev": {
+                "N": 135,
+                "alpha": 0.09247276146230854,
+                "accuracy": 0.5481481481481482,
+                "f1": 0.5445495271279244
+            },
+            "test": {
+                "N": 140,
+                "alpha": 0.08060072389390094,
+                "accuracy": 0.5642857142857143,
+                "f1": 0.5386526929933553
+            }
+        }
+    },
+    "model_card": "This model predicts a random output in the possible range observed in the training set."
+}

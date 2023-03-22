@@ -1,0 +1,189 @@
+{
+    "repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
+    "model": {
+        "model_name": "Random Forest",
+        "model_type": "Non-transformer",
+        "number_params": null,
+        "data_size": null
+    },
+    "tasks": {
+        "absabank-imm": {
+            "dev": {
+                "N": 487,
+                "alpha": 0.012015124262343857,
+                "spearmanr": 0.19349715342399282,
+                "pearsonr": 0.14126596188288387
+            },
+            "test": {
+                "N": 487,
+                "alpha": 0.005371421613256544,
+                "spearmanr": 0.2508312478006387,
+                "pearsonr": 0.21723408928649054
+            }
+        },
+        "argumentation-sentences": {
+            "dev": {
+                "N": 750,
+                "alpha": -0.25623876878187524,
+                "accuracy": 0.45466666666666666,
+                "f1": 0.2083715245951726
+            },
+            "test": {
+                "N": 1065,
+                "alpha": -0.2723894182220361,
+                "accuracy": 0.428169014084507,
+                "f1": 0.19986850756081528
+            }
+        },
+        "dalaj-ged-superlim": {
+            "dev": {
+                "N": 4702,
+                "alpha": -0.31043044824229926,
+                "accuracy": 0.49276903445342407,
+                "f1": 0.34471509437038267
+            },
+            "test": {
+                "N": 4371,
+                "alpha": -0.3124811624636812,
+                "accuracy": 0.4985129261038664,
+                "f1": 0.34368434262341263
+            }
+        },
+        "supersim-superlim-relatedness": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            }
+        },
+        "supersim-superlim-similarity": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            }
+        },
+        "sweanalogy": {
+            "test": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            }
+        },
+        "swediagnostics": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
+            }
+        },
+        "swedn": {
+            "dev": {
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
+            },
+            "test": {
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
+            }
+        },
+        "swefaq": {
+            "dev": {
+                "N": 110,
+                "accuracy": 0.07272727272727272,
+                "pseudoalpha": 0.020627928772258664
+            },
+            "test": {
+                "N": 109,
+                "accuracy": 0.08256880733944955,
+                "pseudoalpha": 0.031022415586872226
+            }
+        },
+        "swenli": {
+            "dev": {
+                "N": 9815,
+                "alpha": -0.25508611833044514,
+                "accuracy": 0.3380539989811513,
+                "f1": 0.21157135441022532
+            },
+            "test": {
+                "N": 305,
+                "alpha": -0.4110506302451138,
+                "accuracy": 0.31475409836065577,
+                "f1": 0.18301892576695533
+            }
+        },
+        "sweparaphrase": {
+            "dev": {
+                "N": 1499,
+                "alpha": 0.15912567068016636,
+                "spearmanr": 0.27436056235194733,
+                "pearsonr": 0.2985744324540612
+            },
+            "test": {
+                "N": 1378,
+                "alpha": 0.14281192330868742,
+                "spearmanr": 0.2724192113151528,
+                "pearsonr": 0.26549276982257064
+            }
+        },
+        "swesat-synonyms": {
+            "test": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            }
+        },
+        "swewic": {
+            "dev": {
+                "N": 500,
+                "alpha": 0.027256079724634286,
+                "accuracy": 0.514,
+                "f1": 0.5131411810433605
+            },
+            "test": {
+                "N": 1000,
+                "alpha": 0.0033458678232036743,
+                "accuracy": 0.502,
+                "f1": 0.5014236457344692
+            }
+        },
+        "swewinogender": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "parity": null,
+                "accuracy": null,
+                "f1": null
+            }
+        },
+        "swewinograd": {
+            "dev": {
+                "N": 135,
+                "alpha": -0.25116279069767433,
+                "accuracy": 0.5925925925925926,
+                "f1": 0.37209302325581395
+            },
+            "test": {
+                "N": 140,
+                "alpha": -0.17721518987341778,
+                "accuracy": 0.6928571428571428,
+                "f1": 0.4092827004219409
+            }
+        }
+    },
+    "model_card": "The model was trained on with the vectorizer performing best on the dev-set of the following:\nhttps://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html\nhttps://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html\nhttps://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html\nhttps://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html"
+}

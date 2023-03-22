@@ -1,0 +1,189 @@
+{
+    "repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
+    "model": {
+        "model_name": "KBLab/bert-base-swedish-cased-new",
+        "model_type": "Encoder",
+        "number_params": 135193344,
+        "data_size": 70
+    },
+    "tasks": {
+        "absabank-imm": {
+            "dev": {
+                "N": 487,
+                "alpha": 0.4762156881663734,
+                "spearmanr": 0.5160555957628348,
+                "pearsonr": 0.5452077013078133
+            },
+            "test": {
+                "N": 487,
+                "alpha": 0.42793809058708565,
+                "spearmanr": 0.4963871402699939,
+                "pearsonr": 0.48222734109828547
+            }
+        },
+        "argumentation-sentences": {
+            "dev": {
+                "N": 750,
+                "alpha": 0.9153032649978777,
+                "accuracy": 0.9453333333333334,
+                "f1": 0.9429381145683534
+            },
+            "test": {
+                "N": 1065,
+                "alpha": 0.5536020879067141,
+                "accuracy": 0.7061032863849765,
+                "f1": 0.701981611914705
+            }
+        },
+        "dalaj-ged-superlim": {
+            "dev": {
+                "N": 4702,
+                "alpha": 0.7262405263676306,
+                "accuracy": 0.8634623564440663,
+                "f1": 0.863105706155546
+            },
+            "test": {
+                "N": 4371,
+                "alpha": 0.753263043782805,
+                "accuracy": 0.8766872569206131,
+                "f1": 0.8766174081197393
+            }
+        },
+        "supersim-superlim-relatedness": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            }
+        },
+        "supersim-superlim-similarity": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            }
+        },
+        "sweanalogy": {
+            "test": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            }
+        },
+        "swediagnostics": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
+            }
+        },
+        "swedn": {
+            "dev": {
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
+            },
+            "test": {
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
+            }
+        },
+        "swefaq": {
+            "dev": {
+                "N": 110,
+                "accuracy": 0.5818181818181818,
+                "pseudoalpha": 0.5583223992502343
+            },
+            "test": {
+                "N": 109,
+                "accuracy": 0.47706422018348627,
+                "pseudoalpha": 0.4476827768845172
+            }
+        },
+        "swenli": {
+            "dev": {
+                "N": 9815,
+                "alpha": 0.7279228418788488,
+                "accuracy": 0.8186449312277126,
+                "f1": 0.8182568877329214
+            },
+            "test": {
+                "N": 305,
+                "alpha": 0.16292043984476068,
+                "accuracy": 0.5540983606557377,
+                "f1": 0.43360568619635975
+            }
+        },
+        "sweparaphrase": {
+            "dev": {
+                "N": 1499,
+                "alpha": 0.8124937396388143,
+                "spearmanr": 0.8188799945522753,
+                "pearsonr": 0.8222931938608415
+            },
+            "test": {
+                "N": 1378,
+                "alpha": 0.7547126376317397,
+                "spearmanr": 0.7460355388324961,
+                "pearsonr": 0.7629254879358645
+            }
+        },
+        "swesat-synonyms": {
+            "test": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            }
+        },
+        "swewic": {
+            "dev": {
+                "N": 500,
+                "alpha": 0.22523235842276446,
+                "accuracy": 0.618,
+                "f1": 0.6122284076190012
+            },
+            "test": {
+                "N": 1000,
+                "alpha": 0.14034679128680516,
+                "accuracy": 0.579,
+                "f1": 0.5699583748308179
+            }
+        },
+        "swewinogender": {
+            "test": {
+                "N": 624,
+                "alpha": -0.32836885847226815,
+                "parity": 0.3333333333333333,
+                "accuracy": 0.49038461538461536,
+                "f1": 0.22006472491909382
+            }
+        },
+        "swewinograd": {
+            "dev": {
+                "N": 135,
+                "alpha": 0.06510658016682114,
+                "accuracy": 0.5555555555555556,
+                "f1": 0.5308155699721966
+            },
+            "test": {
+                "N": 140,
+                "alpha": 0.04204330460374195,
+                "accuracy": 0.65,
+                "f1": 0.5193048840305514
+            }
+        }
+    },
+    "model_card": "---\nlanguage:\n- sv\n\n---\n\n# \ud83e\udd17 BERT Swedish\n\nThis BERT model was trained using the \ud83e\udd17 transformers library.\nThe size of the model is a regular BERT-base with 110M parameters.\nThe model was trained on about 70GB of data, consisting mostly of OSCAR and Swedish newspaper text curated by the National Library of Sweden.\nTo avoid excessive padding documents shorter than 512 tokens were concatenated into one large sequence of 512 tokens, and larger documents were split into multiple 512 token sequences, following https://github.com/huggingface/transformers/blob/master/examples/pytorch/language-modeling/run_mlm.py\n\nTraining was done for a bit more than 8 epochs with a batch size of 2048, resulting in a little less than 125k training steps.\n\nThe model has three sister models trained on the same dataset:\n- [Megatron-BERT-base-125k](https://huggingface.co/KBLab/megatron-bert-base-swedish-cased-125k)\n- [Megatron-BERT-base-600k](https://huggingface.co/KBLab/megatron-bert-base-swedish-cased-600k)\n- [Megatron-BERT-large-110k](https://huggingface.co/KBLab/megatron-bert-large-swedish-cased-110k)\n\n## Acknowledgements\n\nWe gratefully acknowledge the HPC RIVR consortium (https://www.hpc-rivr.si) and EuroHPC JU (https://eurohpc-ju.europa.eu) for funding this research by providing computing resources of the HPC system Vega at the Institute of Information Science (https://www.izum.si)."
+}

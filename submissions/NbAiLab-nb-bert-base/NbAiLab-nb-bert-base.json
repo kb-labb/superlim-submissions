@@ -1,0 +1,189 @@
+{
+    "repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
+    "model": {
+        "model_name": "NbAiLab/nb-bert-base",
+        "model_type": "Encoder",
+        "number_params": 177853440,
+        "data_size": 109
+    },
+    "tasks": {
+        "absabank-imm": {
+            "dev": {
+                "N": 487,
+                "alpha": 0.44077605672299014,
+                "spearmanr": 0.4862300786741427,
+                "pearsonr": 0.5101374870548425
+            },
+            "test": {
+                "N": 487,
+                "alpha": 0.3897229239095724,
+                "spearmanr": 0.4997963713483068,
+                "pearsonr": 0.4722789690911485
+            }
+        },
+        "argumentation-sentences": {
+            "dev": {
+                "N": 750,
+                "alpha": 0.9238434329841982,
+                "accuracy": 0.9506666666666667,
+                "f1": 0.9466368094477895
+            },
+            "test": {
+                "N": 1065,
+                "alpha": 0.5406022361058409,
+                "accuracy": 0.6967136150234742,
+                "f1": 0.6911085957356562
+            }
+        },
+        "dalaj-ged-superlim": {
+            "dev": {
+                "N": 4702,
+                "alpha": 0.6386917651254587,
+                "accuracy": 0.819438536792854,
+                "f1": 0.8193266701712121
+            },
+            "test": {
+                "N": 4371,
+                "alpha": 0.6444602823324843,
+                "accuracy": 0.8229238160603981,
+                "f1": 0.8222098036924024
+            }
+        },
+        "supersim-superlim-relatedness": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            }
+        },
+        "supersim-superlim-similarity": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            }
+        },
+        "sweanalogy": {
+            "test": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            }
+        },
+        "swediagnostics": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
+            }
+        },
+        "swedn": {
+            "dev": {
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
+            },
+            "test": {
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
+            }
+        },
+        "swefaq": {
+            "dev": {
+                "N": 110,
+                "accuracy": 0.7363636363636363,
+                "pseudoalpha": 0.7215510777881912
+            },
+            "test": {
+                "N": 109,
+                "accuracy": 0.6788990825688074,
+                "pseudoalpha": 0.6608578454554054
+            }
+        },
+        "swenli": {
+            "dev": {
+                "N": 9815,
+                "alpha": 0.7174074679927003,
+                "accuracy": 0.8116148751910341,
+                "f1": 0.8112774979621237
+            },
+            "test": {
+                "N": 305,
+                "alpha": 0.17158263524622253,
+                "accuracy": 0.5442622950819672,
+                "f1": 0.43236216116540654
+            }
+        },
+        "sweparaphrase": {
+            "dev": {
+                "N": 1499,
+                "alpha": 0.8795196939933744,
+                "spearmanr": 0.875910640570995,
+                "pearsonr": 0.8805581847867547
+            },
+            "test": {
+                "N": 1378,
+                "alpha": 0.8226164001944754,
+                "spearmanr": 0.8161706091439099,
+                "pearsonr": 0.8284370909191993
+            }
+        },
+        "swesat-synonyms": {
+            "test": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            }
+        },
+        "swewic": {
+            "dev": {
+                "N": 500,
+                "alpha": 0.3518079430942501,
+                "accuracy": 0.676,
+                "f1": 0.6755795510982232
+            },
+            "test": {
+                "N": 1000,
+                "alpha": 0.3259092733841831,
+                "accuracy": 0.664,
+                "f1": 0.662786029706945
+            }
+        },
+        "swewinogender": {
+            "test": {
+                "N": 624,
+                "alpha": -0.3323056259348576,
+                "parity": 0.3301282051282051,
+                "accuracy": 0.4951923076923077,
+                "f1": 0.22079314040728829
+            }
+        },
+        "swewinograd": {
+            "dev": {
+                "N": 135,
+                "alpha": 0.17708513708513707,
+                "accuracy": 0.6074074074074074,
+                "f1": 0.587012987012987
+            },
+            "test": {
+                "N": 140,
+                "alpha": 0.12036063941589692,
+                "accuracy": 0.5928571428571429,
+                "f1": 0.5586039050832458
+            }
+        }
+    },
+    "model_card": "---\nlanguage: no\nlicense: cc-by-4.0\ntags:\n- norwegian\n- bert\npipeline_tag: fill-mask\nwidget:\n- text: P\u00e5 biblioteket kan du [MASK] en bok.\n- text: Dette er et [MASK] eksempel.\n- text: Av og til kan en spr\u00e5kmodell gi et [MASK] resultat.\n- text: Som ansat f\u00e5r du [MASK] for at bidrage til borgernes adgang til dansk kulturarv, til forskning og til samfundets demokratiske udvikling.\n---\n- **Release 1.1** (March 11, 2021)\n- **Release 1.0** (January 13, 2021)\n\n# NB-BERT-base\n\n## Description\n\nNB-BERT-base is a general BERT-base model built on the large digital collection at the National Library of Norway.\n\nThis model is based on the same structure as [BERT Cased multilingual model](https://github.com/google-research/bert/blob/master/multilingual.md), and is trained on a wide variety of Norwegian text (both bokm\u00e5l and nynorsk) from the last 200 years.\n\n## Intended use & limitations\n\nThe 1.1 version of the model is general, and should be fine-tuned for any particular use. Some fine-tuning sets may be found on GitHub, see\n\n* https://github.com/NBAiLab/notram\n\n## Training data\n\nThe model is trained on a wide variety of text. The training set is described on\n\n* https://github.com/NBAiLab/notram\n\n## More information\n\nFor more information on the model, see\n\nhttps://github.com/NBAiLab/notram"
+}

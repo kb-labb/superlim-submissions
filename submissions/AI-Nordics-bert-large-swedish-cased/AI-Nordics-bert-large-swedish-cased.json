@@ -1,0 +1,189 @@
+{
+    "repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
+    "model": {
+        "model_name": "AI-Nordics/bert-large-swedish-cased",
+        "model_type": "Encoder",
+        "number_params": 335215616,
+        "data_size": 85
+    },
+    "tasks": {
+        "absabank-imm": {
+            "dev": {
+                "N": 487,
+                "alpha": 0.5337675267259905,
+                "spearmanr": 0.5413395705743528,
+                "pearsonr": 0.5589199692130341
+            },
+            "test": {
+                "N": 487,
+                "alpha": 0.4800363665552849,
+                "spearmanr": 0.5286529975368441,
+                "pearsonr": 0.5087404601467636
+            }
+        },
+        "argumentation-sentences": {
+            "dev": {
+                "N": 750,
+                "alpha": 0.9360369003588452,
+                "accuracy": 0.9586666666666667,
+                "f1": 0.955191153121793
+            },
+            "test": {
+                "N": 1065,
+                "alpha": 0.5631728261868059,
+                "accuracy": 0.7126760563380282,
+                "f1": 0.70795354022767
+            }
+        },
+        "dalaj-ged-superlim": {
+            "dev": {
+                "N": 4702,
+                "alpha": 0.7160065273533364,
+                "accuracy": 0.8583581454700128,
+                "f1": 0.8579881624604263
+            },
+            "test": {
+                "N": 4371,
+                "alpha": 0.7454488735212976,
+                "accuracy": 0.8727979867307253,
+                "f1": 0.8727098760052159
+            }
+        },
+        "supersim-superlim-relatedness": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            }
+        },
+        "supersim-superlim-similarity": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            }
+        },
+        "sweanalogy": {
+            "test": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            }
+        },
+        "swediagnostics": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
+            }
+        },
+        "swedn": {
+            "dev": {
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
+            },
+            "test": {
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
+            }
+        },
+        "swefaq": {
+            "dev": {
+                "N": 110,
+                "accuracy": 0.8454545454545455,
+                "pseudoalpha": 0.8367713214620431
+            },
+            "test": {
+                "N": 109,
+                "accuracy": 0.7339449541284404,
+                "pseudoalpha": 0.718996500520193
+            }
+        },
+        "swenli": {
+            "dev": {
+                "N": 9815,
+                "alpha": 0.746818923205917,
+                "accuracy": 0.8312786551197148,
+                "f1": 0.8311311278565148
+            },
+            "test": {
+                "N": 305,
+                "alpha": 0.24059404928605732,
+                "accuracy": 0.6,
+                "f1": 0.4954379638462389
+            }
+        },
+        "sweparaphrase": {
+            "dev": {
+                "N": 1499,
+                "alpha": 0.8954584731852759,
+                "spearmanr": 0.9006642465118593,
+                "pearsonr": 0.900823387163283
+            },
+            "test": {
+                "N": 1378,
+                "alpha": 0.8623114441285813,
+                "spearmanr": 0.8688270160761893,
+                "pearsonr": 0.8737795742527951
+            }
+        },
+        "swesat-synonyms": {
+            "test": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            }
+        },
+        "swewic": {
+            "dev": {
+                "N": 500,
+                "alpha": 0.28961355665277955,
+                "accuracy": 0.646,
+                "f1": 0.6444512295559457
+            },
+            "test": {
+                "N": 1000,
+                "alpha": 0.3163173874259473,
+                "accuracy": 0.658,
+                "f1": 0.6579876875567521
+            }
+        },
+        "swewinogender": {
+            "test": {
+                "N": 624,
+                "alpha": -0.3322649572649572,
+                "parity": 0.3333333333333333,
+                "accuracy": 0.5,
+                "f1": 0.3333333333333333
+            }
+        },
+        "swewinograd": {
+            "dev": {
+                "N": 135,
+                "alpha": 0.2404705882352941,
+                "accuracy": 0.6444444444444445,
+                "f1": 0.6188235294117648
+            },
+            "test": {
+                "N": 140,
+                "alpha": 0.19152233978030864,
+                "accuracy": 0.6928571428571428,
+                "f1": 0.5943122851944201
+            }
+        }
+    },
+    "model_card": "---\nlanguage: sv\n---\n\n# A Swedish Bert model\n\n## Model description\nThis model follows the Bert Large model architecture as implemented in [Megatron-LM framework](https://github.com/NVIDIA/Megatron-LM). It was trained with a batch size of 512 in 600k steps. The model contains following parameters:\n<figure>\n\n| Hyperparameter       | Value      |\n|----------------------|------------|\n| \\\\(n_{parameters}\\\\) | 340M |\n| \\\\(n_{layers}\\\\)     | 24    |\n| \\\\(n_{heads}\\\\)      | 16         |\n| \\\\(n_{ctx}\\\\)        | 1024       |\n| \\\\(n_{vocab}\\\\)        | 30592       |\n\n\n## Training data\nThe model is pretrained on a Swedish text corpus of around 85 GB from a variety of sources as shown below.\n<figure>\n\n| Dataset       | Genre      | Size(GB)|\n|----------------------|------|------|\n| Anf\u00f6randen      | Politics  |0.9|\n|DCEP|Politics|0.6|\n|DGT|Politics|0.7|\n|Fass|Medical|0.6|\n|F\u00f6rfattningar|Legal|0.1|\n|Web data|Misc|45.0|\n|JRC|Legal|0.4|\n|Litteraturbanken|Books|0.3O|\n|SCAR|Misc|28.0|\n|SOU|Politics|5.3|\n|Subtitles|Drama|1.3|\n|Wikipedia|Facts|1.8|\n\n\n## Intended uses & limitations\nThe raw model can be used for the usual tasks of masked language modeling or next sentence prediction. It is also often fine-tuned on a downstream task to improve its performance in a specific domain/task.\n<br>\n<br>\n\n## How to use\n\n```python\nfrom transformers import AutoTokenizer, AutoModelForMaskedLM\ntokenizer = AutoTokenizer.from_pretrained(\"AI-Nordics/bert-large-swedish-cased\")\nmodel = AutoModelForMaskedLM.from_pretrained(\"AI-Nordics/bert-large-swedish-cased\")\n"
+}

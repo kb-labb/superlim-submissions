@@ -1,0 +1,189 @@
+{
+    "repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
+    "model": {
+        "model_name": "MaxFreq/Avg",
+        "model_type": "Non-transformer",
+        "number_params": null,
+        "data_size": null
+    },
+    "tasks": {
+        "absabank-imm": {
+            "dev": {
+                "N": 487,
+                "alpha": -0.030990785720814262,
+                "spearmanr": NaN,
+                "pearsonr": NaN
+            },
+            "test": {
+                "N": 487,
+                "alpha": -0.05179039829775545,
+                "spearmanr": NaN,
+                "pearsonr": NaN
+            }
+        },
+        "argumentation-sentences": {
+            "dev": {
+                "N": 750,
+                "alpha": -0.25623876878187524,
+                "accuracy": 0.45466666666666666,
+                "f1": 0.2083715245951726
+            },
+            "test": {
+                "N": 1065,
+                "alpha": -0.2723894182220361,
+                "accuracy": 0.428169014084507,
+                "f1": 0.19986850756081528
+            }
+        },
+        "dalaj-ged-superlim": {
+            "dev": {
+                "N": 4702,
+                "alpha": -0.3471346704871061,
+                "accuracy": 0.484474691620587,
+                "f1": 0.3263610315186246
+            },
+            "test": {
+                "N": 4371,
+                "alpha": -0.3400275946650315,
+                "accuracy": 0.4923358499199268,
+                "f1": 0.32990955082017476
+            }
+        },
+        "supersim-superlim-relatedness": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            }
+        },
+        "supersim-superlim-similarity": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            }
+        },
+        "sweanalogy": {
+            "test": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            }
+        },
+        "swediagnostics": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
+            }
+        },
+        "swedn": {
+            "dev": {
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
+            },
+            "test": {
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
+            }
+        },
+        "swefaq": {
+            "dev": {
+                "N": 110,
+                "accuracy": 0.09090909090909091,
+                "pseudoalpha": 0.039831302717900655
+            },
+            "test": {
+                "N": 109,
+                "accuracy": 0.09174311926605505,
+                "pseudoalpha": 0.040712191431003505
+            }
+        },
+        "swenli": {
+            "dev": {
+                "N": 9815,
+                "alpha": -0.3436829624586546,
+                "accuracy": 0.31818644931227713,
+                "f1": 0.16092131705054877
+            },
+            "test": {
+                "N": 305,
+                "alpha": -0.4338365748334616,
+                "accuracy": 0.3081967213114754,
+                "f1": 0.15705931495405182
+            }
+        },
+        "sweparaphrase": {
+            "dev": {
+                "N": 1499,
+                "alpha": -0.024664601849877066,
+                "spearmanr": NaN,
+                "pearsonr": NaN
+            },
+            "test": {
+                "N": 1378,
+                "alpha": -0.0014945949888760524,
+                "spearmanr": NaN,
+                "pearsonr": NaN
+            }
+        },
+        "swesat-synonyms": {
+            "test": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            }
+        },
+        "swewic": {
+            "dev": {
+                "N": 500,
+                "alpha": -0.3320000000000001,
+                "accuracy": 0.5,
+                "f1": 0.3333333333333333
+            },
+            "test": {
+                "N": 1000,
+                "alpha": -0.33266666666666667,
+                "accuracy": 0.5,
+                "f1": 0.3333333333333333
+            }
+        },
+        "swewinogender": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "parity": null,
+                "accuracy": null,
+                "f1": null
+            }
+        },
+        "swewinograd": {
+            "dev": {
+                "N": 135,
+                "alpha": -0.25116279069767433,
+                "accuracy": 0.5925925925925926,
+                "f1": 0.37209302325581395
+            },
+            "test": {
+                "N": 140,
+                "alpha": -0.17721518987341778,
+                "accuracy": 0.6928571428571428,
+                "f1": 0.4092827004219409
+            }
+        }
+    },
+    "model_card": "This model uses Max Frequency for classification, and the mean strategy for regression\nhttps://scikit-learn.org/stable/modules/generated/sklearn.dummy.DummyClassifier.html\nhttps://scikit-learn.org/stable/modules/generated/sklearn.dummy.DummyRegressor.html"
+}

@@ -9,129 +9,179 @@
     "tasks": {
         "absabank-imm": {
             "dev": {
-                "other": null,
-                "alpha": null
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
             },
             "test": {
-                "other": null,
-                "alpha": null
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
             }
         },
-        "argumentation_sentences": {
+        "argumentation-sentences": {
             "dev": {
-                "other": null,
-                "alpha": null
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
             },
             "test": {
-                "other": null,
-                "alpha": null
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
             }
         },
         "dalaj-ged-superlim": {
             "dev": {
-                "other": null,
-                "alpha": null
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
             },
             "test": {
-                "other": null,
-                "alpha": null
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
             }
         },
         "supersim-superlim-relatedness": {
             "test": {
-                "other": null,
-                "alpha": null
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
             }
         },
         "supersim-superlim-similarity": {
             "test": {
-                "other": null,
-                "alpha": null
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
             }
         },
         "sweanalogy": {
             "test": {
-                "other": null,
-                "accuracy": null
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
             }
         },
         "swediagnostics": {
             "test": {
-                "other": null,
-                "alpha": null
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
             }
         },
         "swedn": {
             "dev": {
-                "other": null,
-                "f1": null
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
             },
             "test": {
-                "other": null,
-                "f1": null
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
             }
         },
         "swefaq": {
             "dev": {
-                "other": null,
-                "alpha": null
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
             },
             "test": {
-                "other": null,
-                "alpha": null
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
             }
         },
-        "swemnli": {
+        "swenli": {
             "dev": {
-                "other": null,
-                "alpha": null
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
             },
             "test": {
-                "other": null,
-                "alpha": null
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
             }
         },
         "sweparaphrase": {
             "dev": {
-                "other": null,
-                "alpha": null
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
             },
             "test": {
-                "other": null,
-                "alpha": null
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
             }
         },
         "swesat-synonyms": {
             "test": {
-                "other": null,
-                "alpha": null
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
             }
         },
         "swewic": {
             "dev": {
-                "other": null,
-                "alpha": null
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
             },
             "test": {
-                "other": null,
-                "alpha": null
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
             }
         },
         "swewinogender": {
             "test": {
-                "other": null,
+                "N": null,
                 "alpha": null,
-                "parity": null
+                "parity": null,
+                "accuracy": null,
+                "f1": null
             }
         },
         "swewinograd": {
             "dev": {
-                "other": null,
-                "alpha": null
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
             },
             "test": {
-                "other": null,
-                "alpha": null
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
             }
         }
     },

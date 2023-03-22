@@ -1,0 +1,189 @@
+{
+    "repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
+    "model": {
+        "model_name": "KBLab/megatron-bert-base-swedish-cased-600k",
+        "model_type": "Encoder",
+        "number_params": 135291648,
+        "data_size": 70
+    },
+    "tasks": {
+        "absabank-imm": {
+            "dev": {
+                "N": 487,
+                "alpha": 0.4973642936532644,
+                "spearmanr": 0.5012104749726798,
+                "pearsonr": 0.5310749214569236
+            },
+            "test": {
+                "N": 487,
+                "alpha": 0.4493220637669525,
+                "spearmanr": 0.5119447023350614,
+                "pearsonr": 0.4784558280223062
+            }
+        },
+        "argumentation-sentences": {
+            "dev": {
+                "N": 750,
+                "alpha": 0.9360324978973001,
+                "accuracy": 0.9586666666666667,
+                "f1": 0.9557867433662421
+            },
+            "test": {
+                "N": 1065,
+                "alpha": 0.5624942917161384,
+                "accuracy": 0.7126760563380282,
+                "f1": 0.7067804503717815
+            }
+        },
+        "dalaj-ged-superlim": {
+            "dev": {
+                "N": 4702,
+                "alpha": 0.6904255680124722,
+                "accuracy": 0.8472990216928966,
+                "f1": 0.8451963225347915
+            },
+            "test": {
+                "N": 4371,
+                "alpha": 0.7180293551409247,
+                "accuracy": 0.8602150537634409,
+                "f1": 0.8589985483721521
+            }
+        },
+        "supersim-superlim-relatedness": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            }
+        },
+        "supersim-superlim-similarity": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            }
+        },
+        "sweanalogy": {
+            "test": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            }
+        },
+        "swediagnostics": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
+            }
+        },
+        "swedn": {
+            "dev": {
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
+            },
+            "test": {
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
+            }
+        },
+        "swefaq": {
+            "dev": {
+                "N": 110,
+                "accuracy": 0.8454545454545455,
+                "pseudoalpha": 0.8367713214620431
+            },
+            "test": {
+                "N": 109,
+                "accuracy": 0.7247706422018348,
+                "pseudoalpha": 0.7093067246760617
+            }
+        },
+        "swenli": {
+            "dev": {
+                "N": 9815,
+                "alpha": 0.7442547691033181,
+                "accuracy": 0.8295466123280693,
+                "f1": 0.8293799811144079
+            },
+            "test": {
+                "N": 305,
+                "alpha": 0.21768287748826665,
+                "accuracy": 0.5836065573770491,
+                "f1": 0.45837539695804774
+            }
+        },
+        "sweparaphrase": {
+            "dev": {
+                "N": 1499,
+                "alpha": 0.895230551130922,
+                "spearmanr": 0.8979126554546627,
+                "pearsonr": 0.8980329104423451
+            },
+            "test": {
+                "N": 1378,
+                "alpha": 0.8668124893698346,
+                "spearmanr": 0.8642757719517731,
+                "pearsonr": 0.8726077691547008
+            }
+        },
+        "swesat-synonyms": {
+            "test": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            }
+        },
+        "swewic": {
+            "dev": {
+                "N": 500,
+                "alpha": 0.29989067361870325,
+                "accuracy": 0.65,
+                "f1": 0.6495949317410927
+            },
+            "test": {
+                "N": 1000,
+                "alpha": 0.2771458822280254,
+                "accuracy": 0.639,
+                "f1": 0.6383921371826039
+            }
+        },
+        "swewinogender": {
+            "test": {
+                "N": 624,
+                "alpha": -0.32095207926727487,
+                "parity": 0.3301282051282051,
+                "accuracy": 0.5016025641025641,
+                "f1": 0.22482799825774835
+            }
+        },
+        "swewinograd": {
+            "dev": {
+                "N": 135,
+                "alpha": 0.17913652802893298,
+                "accuracy": 0.6,
+                "f1": 0.5880424954792044
+            },
+            "test": {
+                "N": 140,
+                "alpha": 0.06144875532630645,
+                "accuracy": 0.5714285714285714,
+                "f1": 0.5290423861852434
+            }
+        }
+    },
+    "model_card": "---\nlanguage:\n- sv\n\n---\n\n# Megatron-BERT-base Swedish 600k\n\nThis BERT model was trained using the Megatron-LM library.\nThe size of the model is a regular BERT-base with 110M parameters.\nThe model was trained on about 70GB of data, consisting mostly of OSCAR and Swedish newspaper text curated by the National Library of Sweden.\n\nTraining was done for 600k training steps. Its [sister model](https://huggingface.co/KBLab/megatron-bert-base-swedish-cased-125k) used the same setup, but was instead trained for only 125k steps.\n\n\nThe model has three sister models trained on the same dataset:\n- [\ud83e\udd17 BERT Swedish](https://huggingface.co/KBLab/bert-base-swedish-cased-new)\n- [Megatron-BERT-base-125k](https://huggingface.co/KBLab/megatron-bert-base-swedish-cased-125k)\n- [Megatron-BERT-large-110k](https://huggingface.co/KBLab/megatron-bert-large-swedish-cased-110k)\n\n## Acknowledgements\n\nWe gratefully acknowledge the HPC RIVR consortium (https://www.hpc-rivr.si) and EuroHPC JU (https://eurohpc-ju.europa.eu) for funding this research by providing computing resources of the HPC system Vega at the Institute of Information Science (https://www.izum.si)."
+}

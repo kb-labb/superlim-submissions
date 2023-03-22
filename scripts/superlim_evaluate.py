@@ -290,9 +290,16 @@ def evaluate_swedn(gold_file, system_file):
     else:
         system_labels = [datapoint[label] for datapoint in system_data]
     
-    results = purple.compute(references=gold_labels, predictions=system_labels)
-    print(results)
-    results["f1"] = 2 * results["bleu"] * results["rouge"] / (results["rouge"] + results["bleu"])
+    _results = purple.compute(references=gold_labels, predictions=system_labels)
+    results = {}
+    results["rouge1"] = _results["rouge1"]
+    results["rouge2"] = _results["rouge2"]
+    results["rougeL"] = _results["rougeL"]
+    results["bleu"] = _results["bleu"]
+    results["translation_length"] = _results["translation_length"]
+    results["reference_length"] = _results["reference_length"]
+    # print(results)
+    # results["f1"] = 2 * results["bleu"] * results["rouge"] / (results["rouge"] + results["bleu"])
     return results
     raise NotImplementedError()
 

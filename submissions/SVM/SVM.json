@@ -1,0 +1,189 @@
+{
+    "repo_link": "https://github.com/JoeyOhman/SuperLim-2-Testing",
+    "model": {
+        "model_name": "SVM",
+        "model_type": "Non-transformer",
+        "number_params": null,
+        "data_size": null
+    },
+    "tasks": {
+        "absabank-imm": {
+            "dev": {
+                "N": 487,
+                "alpha": 0.3363473245250357,
+                "spearmanr": 0.3602505275363412,
+                "pearsonr": 0.36347174003906735
+            },
+            "test": {
+                "N": 487,
+                "alpha": 0.28591574572345757,
+                "spearmanr": 0.36614701162566865,
+                "pearsonr": 0.3228202013196631
+            }
+        },
+        "argumentation-sentences": {
+            "dev": {
+                "N": 750,
+                "alpha": 0.9067892986293723,
+                "accuracy": 0.94,
+                "f1": 0.9345978288531884
+            },
+            "test": {
+                "N": 1065,
+                "alpha": 0.35375904148026216,
+                "accuracy": 0.5765258215962441,
+                "f1": 0.5662816255138399
+            }
+        },
+        "dalaj-ged-superlim": {
+            "dev": {
+                "N": 4702,
+                "alpha": 0.5011485927995445,
+                "accuracy": 0.7507443641003828,
+                "f1": 0.7505477702162563
+            },
+            "test": {
+                "N": 4371,
+                "alpha": 0.5177389912955501,
+                "accuracy": 0.7588652482269503,
+                "f1": 0.7588419095015273
+            }
+        },
+        "supersim-superlim-relatedness": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            }
+        },
+        "supersim-superlim-similarity": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            }
+        },
+        "sweanalogy": {
+            "test": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            }
+        },
+        "swediagnostics": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
+            }
+        },
+        "swedn": {
+            "dev": {
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
+            },
+            "test": {
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
+            }
+        },
+        "swefaq": {
+            "dev": {
+                "N": 110,
+                "accuracy": 0.10909090909090909,
+                "pseudoalpha": 0.05903467666354263
+            },
+            "test": {
+                "N": 109,
+                "accuracy": 0.09174311926605505,
+                "pseudoalpha": 0.040712191431003505
+            }
+        },
+        "swenli": {
+            "dev": {
+                "N": 9815,
+                "alpha": 0.12626128276038528,
+                "accuracy": 0.419460010188487,
+                "f1": 0.41640133219209696
+            },
+            "test": {
+                "N": 305,
+                "alpha": 0.00020414933523871248,
+                "accuracy": 0.36721311475409835,
+                "f1": 0.327006346117058
+            }
+        },
+        "sweparaphrase": {
+            "dev": {
+                "N": 1499,
+                "alpha": 0.17572574617584513,
+                "spearmanr": 0.23453980665218815,
+                "pearsonr": 0.24676056291155055
+            },
+            "test": {
+                "N": 1378,
+                "alpha": 0.23909041564260092,
+                "spearmanr": 0.2735176304999406,
+                "pearsonr": 0.2964999805827878
+            }
+        },
+        "swesat-synonyms": {
+            "test": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            }
+        },
+        "swewic": {
+            "dev": {
+                "N": 500,
+                "alpha": 0.012941006362058971,
+                "accuracy": 0.508,
+                "f1": 0.5059764796606901
+            },
+            "test": {
+                "N": 1000,
+                "alpha": 0.04226350928959022,
+                "accuracy": 0.521,
+                "f1": 0.5208922007451677
+            }
+        },
+        "swewinogender": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "parity": null,
+                "accuracy": null,
+                "f1": null
+            }
+        },
+        "swewinograd": {
+            "dev": {
+                "N": 135,
+                "alpha": 0.09818007662835249,
+                "accuracy": 0.5851851851851851,
+                "f1": 0.5474137931034483
+            },
+            "test": {
+                "N": 140,
+                "alpha": 0.05496066433566438,
+                "accuracy": 0.5571428571428572,
+                "f1": 0.5257867132867133
+            }
+        }
+    },
+    "model_card": "The model was trained on with the vectorizer performing best on the dev-set of the following:\nhttps://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html\nhttps://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html\nhttps://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html\nhttps://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html"
+}
