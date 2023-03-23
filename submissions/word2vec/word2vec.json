@@ -1,0 +1,189 @@
+{
+    "repo_link": null,
+    "model": {
+        "model_name": null,
+        "model_type": null,
+        "number_params": null,
+        "data_size": null
+    },
+    "tasks": {
+        "absabank-imm": {
+            "dev": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            },
+            "test": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            }
+        },
+        "argumentation-sentences": {
+            "dev": {
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
+            },
+            "test": {
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
+            }
+        },
+        "dalaj-ged-superlim": {
+            "dev": {
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
+            },
+            "test": {
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
+            }
+        },
+        "supersim-superlim-relatedness": {
+            "test": {
+                "N": 1229,
+                "alpha": 0.41073271871226824,
+                "spearmanr": 0.5130054128542922,
+                "pearsonr": 0.5190075888777662
+            }
+        },
+        "supersim-superlim-similarity": {
+            "test": {
+                "N": 1229,
+                "alpha": -0.10905790715597075,
+                "spearmanr": 0.4954212163427768,
+                "pearsonr": 0.4237625936593654
+            }
+        },
+        "sweanalogy": {
+            "test": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            }
+        },
+        "swediagnostics": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
+            }
+        },
+        "swedn": {
+            "dev": {
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
+            },
+            "test": {
+                "rouge1": null,
+                "rouge2": null,
+                "rougeL": null,
+                "bleu": null,
+                "translation_length": null,
+                "reference_length": null,
+                "accuracy": null
+            }
+        },
+        "swefaq": {
+            "dev": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            },
+            "test": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            }
+        },
+        "swenli": {
+            "dev": {
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
+            },
+            "test": {
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
+            }
+        },
+        "sweparaphrase": {
+            "dev": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            },
+            "test": {
+                "N": null,
+                "alpha": null,
+                "spearmanr": null,
+                "pearsonr": null
+            }
+        },
+        "swesat-synonyms": {
+            "test": {
+                "N": null,
+                "accuracy": null,
+                "pseudoalpha": null
+            }
+        },
+        "swewic": {
+            "dev": {
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
+            },
+            "test": {
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
+            }
+        },
+        "swewinogender": {
+            "test": {
+                "N": null,
+                "alpha": null,
+                "parity": null,
+                "accuracy": null,
+                "f1": null
+            }
+        },
+        "swewinograd": {
+            "dev": {
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
+            },
+            "test": {
+                "N": null,
+                "alpha": null,
+                "accuracy": null,
+                "f1": null
+            }
+        }
+    },
+    "model_card": null
+}
