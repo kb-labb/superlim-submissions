@@ -1,9 +1,9 @@
 {
-    "repo_link": null,
+    "repo_link": "https://github.com/timpal0l/superlim-word-level-eval",
     "model": {
-        "model_name": null,
-        "model_type": null,
-        "number_params": null,
+        "model_name": "gpt-sw3-356m",
+        "model_type": "gpt",
+        "number_params": 356000000,
         "data_size": null
     },
     "tasks": {
@@ -142,8 +142,8 @@
         },
         "swesat-synonyms": {
             "test": {
-                "N": null,
-                "accuracy": null,
+                "N": 739,
+                "accuracy": 0.6265,
                 "pseudoalpha": null
             }
         },
@@ -185,5 +185,5 @@
             }
         }
     },
-    "model_card": null
+    "model_card": "https://huggingface.co/AI-Sweden-Models/gpt-sw3-356m"
 }
