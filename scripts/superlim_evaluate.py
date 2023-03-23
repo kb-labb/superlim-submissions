@@ -57,7 +57,7 @@ def _read_data_from_jsonl_file(file_):
     return data
 
 
-def _sanity_check(gold_data, system_data):
+def _sanity_check(gold_data, system_data, output_name='label'):
     """Sanity check to be run before comparing a set of system predictions
     with a gold standard. Checks a number of things, but most
     importantly it inspects the paired items to see if they are the
@@ -68,6 +68,8 @@ def _sanity_check(gold_data, system_data):
         gold_data: a list of dictionaries containing the gold standard items
         system_data: a list of dictionaries containing the items with
             system predictions
+        output_name: the name used for the variable that contains the
+            output, as string. Defaults to 'label'.
 
     Exceptions:
         Exception: generic exception with details in the message text is 
@@ -89,12 +91,12 @@ def _sanity_check(gold_data, system_data):
                             'not a JSON object (but array, string, number, etc).'
                             % (i+1,))
 
-        if 'label' not in system_datapoint:
+        if output_name not in system_datapoint:
             raise Exception('[Sanity check] Line %s in the system data file '
-                            'does not have a \'label\' attribute.'
+                            f'does not have the \'{output_name}\' attribute.'
                             % (i+1,))
 
-        system_datapoint['label'] = gold_datapoint['label']
+        system_datapoint[output_name] = gold_datapoint[output_name]
         if "prediction" in system_datapoint:
             system_datapoint.pop("prediction")
         # TODO fix for added prediction elemente
@@ -112,7 +114,7 @@ def _sanity_check(gold_data, system_data):
 
 # Generic evaluation functions
 #
-def _evaluate_alphanominal(gold_file, system_file):
+def _evaluate_alphanominal(gold_file, system_file, output_name='label'):
     """Evaluate nominal scale system predictions in system_file against the
     gold standard in gold_file, and report as Krippendorff's α.
 
@@ -127,14 +129,14 @@ def _evaluate_alphanominal(gold_file, system_file):
     """
     gold_data = _read_data_from_jsonl_file(gold_file)
     system_data = _read_data_from_jsonl_file(system_file)
-    _sanity_check(gold_data, system_data)
+    _sanity_check(gold_data, system_data, output_name=output_name)
 
-    gold_labels = [datapoint['label'] for datapoint in gold_data]
-    
+    gold_labels = [datapoint[output_name] for datapoint in gold_data]
+
     if "prediction" in system_data[0]:
         system_labels = [datapoint['prediction'] for datapoint in system_data]
     else:
-        system_labels = [datapoint['label'] for datapoint in system_data]
+        system_labels = [datapoint[output_name] for datapoint in system_data]
 
     R = {}
     R['N'] = len(gold_labels)
@@ -144,7 +146,7 @@ def _evaluate_alphanominal(gold_file, system_file):
     return R
 
 
-def _evaluate_alphainterval(gold_file, system_file):
+def _evaluate_alphainterval(gold_file, system_file, output_name='label'):
     """Evaluate interval scale system predictions in system_file against the
     gold standard in gold_file, and report as Krippendorff's α.
 
@@ -159,13 +161,13 @@ def _evaluate_alphainterval(gold_file, system_file):
     """
     gold_data = _read_data_from_jsonl_file(gold_file)
     system_data = _read_data_from_jsonl_file(system_file)
-    _sanity_check(gold_data, system_data)
+    _sanity_check(gold_data, system_data, output_name=output_name)
 
-    gold_labels = [datapoint['label'] for datapoint in gold_data]
+    gold_labels = [datapoint[output_name] for datapoint in gold_data]
     if "prediction" in system_data[0]:
         system_labels = [datapoint['prediction'] for datapoint in system_data]
     else:
-        system_labels = [datapoint['label'] for datapoint in system_data]
+        system_labels = [datapoint[output_name] for datapoint in system_data]
 
     R = {}
     R['N'] = len(gold_labels)
@@ -175,7 +177,7 @@ def _evaluate_alphainterval(gold_file, system_file):
     return R
 
 
-def _evaluate_accuracy(gold_file, system_file):
+def _evaluate_accuracy(gold_file, system_file, output_name='label'):
     """Evaluate system predictions in system_file against the gold
     standard in gold_file, and report as accuracy (=proportion of
     correct predictions).
@@ -196,13 +198,13 @@ def _evaluate_accuracy(gold_file, system_file):
     """
     gold_data = _read_data_from_jsonl_file(gold_file)
     system_data = _read_data_from_jsonl_file(system_file)
-    _sanity_check(gold_data, system_data)
+    _sanity_check(gold_data, system_data, output_name=output_name)
 
-    gold_labels = [datapoint['label'] for datapoint in gold_data]
+    gold_labels = [datapoint[output_name] for datapoint in gold_data]
     if "prediction" in system_data[0]:
         system_labels = [datapoint['prediction'] for datapoint in system_data]
     else:
-        system_labels = [datapoint['label'] for datapoint in system_data]
+        system_labels = [datapoint[output_name] for datapoint in system_data]
 
     correct = sum(gold_label == system_label
                   for gold_label, system_label in zip(gold_labels, system_labels))
@@ -281,16 +283,17 @@ def evaluate_swedn(gold_file, system_file):
     label = "summary"
     gold_data = _read_data_from_jsonl_file(gold_file)
     system_data = _read_data_from_jsonl_file(system_file)
-    # _sanity_check(gold_data, system_data)
+    _sanity_check(gold_data, system_data, output_name=label)
 
     gold_labels = [[datapoint[label]] for datapoint in gold_data]
-    
+
     if "prediction" in system_data[0]:
         system_labels = [datapoint['prediction'] for datapoint in system_data]
     else:
         system_labels = [datapoint[label] for datapoint in system_data]
-    
-    _results = purple.compute(references=gold_labels, predictions=system_labels)
+
+    _results = purple.compute(references=gold_labels,
+                              predictions=system_labels)
     results = {}
     results["rouge1"] = _results["rouge1"]
     results["rouge2"] = _results["rouge2"]
@@ -344,10 +347,8 @@ def evaluate_swewinogender(gold_file, system_file):
     R['N'] = len(gold_labels)
     R['alpha'] = kralpha.krippendorff_alpha([gold_labels, system_labels],
                                             metric=kralpha.nominal_metric,
-                                            # metric=kralpha.interval_metric,
                                             convert_items=str)
 
-    # R = _evaluate_alphanominal(gold_file,system_file)
     # Parity looks at how often the prediction is the same accross
     # tuple_id, irrespective of whether this prediction is correct.
     system_labels_by_tuple_id = {tuple_id: [] for tuple_id in tuple_ids}
