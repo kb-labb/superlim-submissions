@@ -1,8 +1,8 @@
 {
-    "repo_link": null,
+    "repo_link": "https://github.com/timpal0l/superlim-word-level-eval",
     "model": {
-        "model_name": null,
-        "model_type": null,
+        "model_name": "sv_core_news_lg",
+        "model_type": "word embedding",
         "number_params": null,
         "data_size": null
     },
@@ -67,8 +67,8 @@
         },
         "sweanalogy": {
             "test": {
-                "N": null,
-                "accuracy": null,
+                "N": 739,
+                "accuracy": 0.4925575101488498,
                 "pseudoalpha": null
             }
         },
@@ -143,7 +143,7 @@
         "swesat-synonyms": {
             "test": {
                 "N": null,
-                "accuracy": null,
+                "accuracy": ,
                 "pseudoalpha": null
             }
         },
