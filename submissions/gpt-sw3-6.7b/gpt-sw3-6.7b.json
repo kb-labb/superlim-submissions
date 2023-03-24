@@ -143,8 +143,8 @@
         "swesat-synonyms": {
             "test": {
                 "N": 739,
-                "accuracy": 0.8498,
-                "pseudoalpha": null
+                "accuracy": 0.8497970230040596,
+                "pseudoalpha": 0.8122462787550744
             }
         },
         "swewic": {
