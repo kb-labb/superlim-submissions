@@ -2,7 +2,7 @@
     "repo_link": "https://github.com/timpal0l/superlim-word-level-eval",
     "model": {
         "model_name": "gpt-sw3-356m",
-        "model_type": "gpt",
+        "model_type": "Decoder",
         "number_params": 356000000,
         "data_size": null
     },
