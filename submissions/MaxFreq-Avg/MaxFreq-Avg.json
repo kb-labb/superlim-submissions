@@ -11,14 +11,14 @@
             "dev": {
                 "N": 487,
                 "alpha": -0.030990785720814262,
-                "spearmanr": NaN,
-                "pearsonr": NaN
+                "spearmanr": null,
+                "pearsonr": null 
             },
             "test": {
                 "N": 487,
                 "alpha": -0.05179039829775545,
-                "spearmanr": NaN,
-                "pearsonr": NaN
+                "spearmanr": null,
+                "pearsonr": null 
             }
         },
         "argumentation-sentences": {
@@ -130,14 +130,14 @@
             "dev": {
                 "N": 1499,
                 "alpha": -0.024664601849877066,
-                "spearmanr": NaN,
-                "pearsonr": NaN
+                "spearmanr": null,
+                "pearsonr": null 
             },
             "test": {
                 "N": 1378,
                 "alpha": -0.0014945949888760524,
-                "spearmanr": NaN,
-                "pearsonr": NaN
+                "spearmanr": null,
+                "pearsonr": null
             }
         },
         "swesat-synonyms": {

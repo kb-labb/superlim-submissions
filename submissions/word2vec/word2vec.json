@@ -143,7 +143,7 @@
         "swesat-synonyms": {
             "test": {
                 "N": null,
-                "accuracy": ,
+                "accuracy": null,
                 "pseudoalpha": null
             }
         },
