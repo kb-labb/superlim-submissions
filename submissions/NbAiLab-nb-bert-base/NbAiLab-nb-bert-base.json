@@ -74,8 +74,8 @@
         },
         "swediagnostics": {
             "test": {
-                "N": null,
-                "alpha": null,
+                "N": 305,
+                "alpha": 0.3143881895267470,
                 "accuracy": null,
                 "f1": null
             }
