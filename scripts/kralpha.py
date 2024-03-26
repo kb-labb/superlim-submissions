@@ -86,7 +86,7 @@ def krippendorff_alpha(data,
         (True,True):  nr_true_positives,
         (True,False): nr_false_negatives,
         (False,True): nr_false_positives,
-        (True,True):  nr_true_negatives,
+        (False,False):  nr_true_negatives,
     }
 
     for which we can calculate Krippendorff's alpha by
