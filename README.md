@@ -1,6 +1,6 @@
 # SuperLim Submissions
 
-This is the official repository for submitting new entries to the SuperLim leaderboard, as well as downloading previous entries.
+This is the official repository for submitting new entries to the [SuperLim leaderboard[(https://lab.kb.se/leaderboard/), as well as downloading previous entries.
 
 For your submission to be accepted we require you 
 
